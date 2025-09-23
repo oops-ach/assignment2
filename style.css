@@ -382,8 +382,8 @@ h4 {
 
 /* card styling */
 .n-shoe-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-around;
   gap: 30px;
 }
 
