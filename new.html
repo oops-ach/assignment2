@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="C:\Users\erabo\Desktop\assignment2\logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="new_body">
+    <header>
+        <nav class="header_nav">
+            <div class="header_logo">
+                <h4>Demon Slayer</h4>
+                <div class="header_logo_overlay"></div>
+            </div>
+
+            <ul class="header_menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="new.html">New</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="n-main">
+        <!-- First Page Section -->
+        <section class="n-hero" id="n-hero">
+            <div class="n-hero-text">
+                <h1>Browse & Select Anime-Inspired Shoes</h1>
+                <p>Find the freshest kicks inspired by your favorite anime. Rare styles, bold designs, and 50% off
+                    limited drops.</p>
+                <button class="n-scroll-btn"
+                    onclick="document.getElementById('n-new-arrivals').scrollIntoView({ behavior: 'smooth' })">
+                    Explore New Arrivals
+                </button>
+            </div>
+            <div class="n-hero-gallery">
+                <img src="photos/Screenshot 2025-09-22 080532.png" alt="Anime Shoe 1" class="n-shoe-left">
+                <img src="photos/Screenshot 2025-09-22 081406.png" alt="Anime Shoe 2" class="n-shoe-center">
+                <img src="photos/Screenshot 2025-09-22 081529.png" alt="Anime Shoe 3" class="n-shoe-right">
+            </div>
+        </section>
+
+        <!-- Second Page Section -->
+        <section class="n-new-arrivals" id="n-new-arrivals">
+            <h2>🔥 New Arrivals</h2>
+            <div class="n-shoe-grid">
+                <!-- shoe cards  -->
+                <div class="n-shoe-card">
+                    <img src="photos/Screenshot 2025-09-22 080532.png" alt="Shoe 1">
+                    <h3>Attack On Titan</h3>
+                    <p>$59.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="n-shoe-card">
+                    <img src="photos/Screenshot 2025-09-22 081406.png" alt="Shoe 2">
+                    <h3>Naruto</h3>
+                    <p>$64.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="n-shoe-card">
+                    <img src="photos/Screenshot 2025-09-22 081529.png" alt="Shoe 3">
+                    <h3>One Piece</h3>
+                    <p>$69.99</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h3>&copy; All Rights Reserved</h3>
+        <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
+    </footer>
+
+</body>
+
+</html>
