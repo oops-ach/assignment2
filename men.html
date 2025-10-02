@@ -12,6 +12,7 @@
     <header>
         <nav class="header_nav">
             <div class="header_logo">
+                <img src="photos/logoNoBack.png" alt="Logo" class="logo_img">
                 <h4>Demon Slayer</h4>
                 <div class="header_logo_overlay"></div>
             </div>
@@ -21,116 +22,198 @@
                 <li><a href="account.html">Account</a></li>
                 <li><a href="new.html">New</a></li>
                 <li><a href="men.html">Men</a></li>
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Kids</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Help</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Help</a></li>
             </ul>
         </nav>
     </header>
-    
-    <main class="new-arrivals">
-        <section class="welcome-banner">
-            <h2>WELCOME TO DEMON SLAYER STORE</h2>
-            <p>EXPLORE OUR CUSTOM ANIME-INSPIRED COLLECTION</p>
-        </section>
 
-        <h1>Men's Catalog</h1>
-        <div class="product-grid">
-            <!-- row 1 -->
-            <div class="product-card">
-                <img src="photos/demon_slayer.png" alt="Custom Anime Sneakers">
-                <div class="product-info">
-                    <span class="product-color">1 COLOR</span>
-                    <div class="product-row">
-                        <h3 class="product-brand">Demon Slayer</h3>
-                        <span class="product-price">$120.00</span>
-                    </div>
-                    <p class="product-desc">Rivalry Low Demon Slayer</p>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="photos/Ken_Kaneki_Hoodie.png" alt="Custom Anime Sneakers">
-                <div class="product-info">
-                    <span class="product-color">1 COLOR</span>
-                    <div class="product-row">
-                        <h3 class="product-brand">Ken Kaneki Hoodie</h3>
-                        <span class="product-price">$109.00</span>
-                    </div>
-                    <p class="product-desc">Women's Zip-Up Active Top</p>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="photos/attack_on_titan.png" alt="Custom Anime Sneakers">
-                <div class="product-info">
-                    <span class="product-color">1 COLOR</span>
-                    <div class="product-row">
-                        <h3 class="product-brand">Attack on Titan Shoes</h3>
-                        <span class="product-price">$184.00</span>
-                    </div>
-                    <p class="product-desc">Levi Ackerman High Top</p>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="photos/one_piece.png" alt="Custom Anime Sneakers">
-                <div class="product-info">
-                    <span class="product-color">1 COLOR</span>
-                    <div class="product-row">
-                        <h3 class="product-brand">One Piece Sneakers</h3>
-                        <span class="product-price">$120.00</span>
-                    </div>
-                    <p class="product-desc">Zoro Low Top Sneakers</p>
-                </div>
-            </div>
+    <div class="grid-layout">
+        <!-- sidebar -->
+        <aside>
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#">Shoes</a></li>
+                <li><a href="#">Hoodies</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Anime Specials</a></li>
+            </ul>
+        </aside>
+        <!-- main content -->
+        <main>
+            <section class="welcome-banner">
+                <h2>WELCOME TO DEMON SLAYER STORE</h2>
+                <p>EXPLORE OUR CUSTOM ANIME-INSPIRED COLLECTION</p>
+            </section>
 
-            <div class="product-card">
-                <img src="photos/naruto_shoes.png" alt="Custom Anime Sneakers">
-                <div class="product-info">
-                    <span class="product-color">1 COLOR</span>
-                    <div class="product-row">
-                        <h3 class="product-brand">Naruto Sneakers</h3>
-                        <span class="product-price">$135.00</span>
+            <h1>Men's Catalog</h1>
+            <div class="product-grid">
+                <!-- product 1 -->
+                <div class="product-card">
+                    <img src="photos/demon_slayer.png" alt="Custom Anime Sneakers">
+                    <div class="product-info">
+                        <span class="product-color">1 COLOR</span>
+                        <div class="product-row">
+                            <h3 class="product-brand">Demon Slayer</h3>
+                            <span class="product-price">$120.00</span>
+                        </div>
+                        <div class="descBtn">
+                            <p class="product-desc">Rivalry Low Demon Slayer</p>
+                            <button class="add-to-cart">+</button>
+                        </div>
                     </div>
-                    <p class="product-desc">Nara Shikamaru AF1 Shoes</p>
-                </div>
-            </div>
 
-            <!-- row 2 -->
-            <div class="product-card">
-                <img src="photos/bleach.png" alt="Custom Anime Sneakers">
-                <div class="product-info">
-                    <span class="product-color">1 COLOR</span>
-                    <div class="product-row">
-                        <h3 class="product-brand">Bleach Sneakers</h3>
-                        <span class="product-price">$113.00</span>
+                </div>
+
+                <!-- product 2 -->
+                <div class="product-card">
+                    <img src="photos/Ken_Kaneki_Hoodie.png" alt="Custom Hoodie">
+                    <div class="product-info">
+                        <span class="product-color">1 COLOR</span>
+                        <div class="product-row">
+                            <h3 class="product-brand">Ken Kaneki Hoodie</h3>
+                            <span class="product-price">$109.00</span>
+                        </div>
+                        <div class="descBtn">
+                            <p class="product-desc">Women's Zip-Up Active Top</p>
+                            <button class="add-to-cart">+</button>
+                        </div>
+                        
                     </div>
-                    <p class="product-desc">BLEACH x ASICS Sneaker Collaboration</p>
+                </div>
+
+                <!-- product 3 -->
+                <div class="product-card">
+                    <img src="photos/attack_on_titan.png" alt="Attack on Titan Shoes">
+                    <div class="product-info">
+                        <span class="product-color">1 COLOR</span>
+                        <div class="product-row">
+                            <h3 class="product-brand">Attack on Titan Shoes</h3>
+                            <span class="product-price">$184.00</span>
+                        </div>
+                        <div class="descBtn">
+                            <p class="product-desc">Levi Ackerman High Top</p>
+                            <button class="add-to-cart">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 4 -->
+                <div class="product-card">
+                    <img src="photos/one_piece.png" alt="One Piece Sneakers">
+                    <div class="product-info">
+                        <span class="product-color">1 COLOR</span>
+                        <div class="product-row">
+                            <h3 class="product-brand">One Piece Sneakers</h3>
+                            <span class="product-price">$120.00</span>
+                        </div>
+                        <div class="descBtn">
+                            <p class="product-desc">Zoro Low Top Sneakers</p>
+                            <button class="add-to-cart">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 5 -->
+                <div class="product-card">
+                    <img src="photos/naruto_shoes.png" alt="Naruto Sneakers">
+                    <div class="product-info">
+                        <span class="product-color">1 COLOR</span>
+                        <div class="product-row">
+                            <h3 class="product-brand">Naruto Sneakers</h3>
+                            <span class="product-price">$135.00</span>
+                        </div>
+                        <div class="descBtn">
+                            <p class="product-desc">Nara Shikamaru AF1 Shoes</p>
+                            <button class="add-to-cart">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 6 -->
+                <div class="product-card">
+                    <img src="photos/bleach.png" alt="Bleach Sneakers">
+                    <div class="product-info">
+                        <span class="product-color">1 COLOR</span>
+                        <div class="product-row">
+                            <h3 class="product-brand">Bleach Sneakers</h3>
+                            <span class="product-price">$113.00</span>
+                        </div>
+                        <div class="descBtn">
+                            <p class="product-desc">BLEACH x ASICS Sneaker Collaboration</p>
+                            <button class="add-to-cart">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 7 -->
+                <div class="product-card">
+                    <img src="photos/tokyo.png" alt="Tokyo Ghoul Sneakers">
+                    <div class="product-info">
+                        <span class="product-color">1 COLOR</span>
+                        <div class="product-row">
+                            <h3 class="product-brand">Tokyo Ghoul Sneakers</h3>
+                            <span class="product-price">$140.00</span>
+                        </div>
+                        <div class="descBtn">
+                            <p class="product-desc">Ken Kaneki High Top Shoes</p>
+                            <button class="add-to-cart">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 8 -->
+                <div class="product-card">
+                    <img src="photos/naruto_itachi.png" alt="Itachi Naruto Shoes">
+                    <div class="product-info">
+                        <span class="product-color">1 COLOR</span>
+                        <div class="product-row">
+                            <h3 class="product-brand">Naruto Sneakers</h3>
+                            <span class="product-price">$105.00</span>
+                        </div>
+                        <div class="descBtn">
+                            <p class="product-desc">Akatsuki Itachi Shoes</p>
+                            <button class="add-to-cart" >+</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="photos/tokyo.png" alt="Custom Anime Sneakers">
-                <div class="product-info">
-                    <span class="product-color">1 COLOR</span>
-                    <div class="product-row">
-                        <h3 class="product-brand">Tokyo Ghoul Sneakers</h3>
-                        <span class="product-price">$140.00</span>
-                    </div>
-                    <p class="product-desc">Ken Kaneki Tōkyō Gūru J1 High Top Shoes</p>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="photos/naruto_itachi.png" alt="Custom Anime Sneakers">
-                <div class="product-info">
-                    <span class="product-color">1 COLOR</span>
-                    <div class="product-row">
-                        <h3 class="product-brand">Naruto Sneakers</h3>
-                        <span class="product-price">$105.00</span>
-                    </div>
-                    <p class="product-desc">Akatsuki Itachi Naruto JD Shoes</p>
-                </div>
-            </div>
+        </main>
+    </div>
+
+    <!-- image gallery -->
+    <section class="gallery">
+        <div class="gallery-item"><img src="photos/gallery9.png" alt="">
+            <div class="gallery-caption">Picture 1</div>
         </div>
-    </main>
+        <div class="gallery-item"><img src="photos/image1.jpg" alt="">
+            <div class="gallery-caption">Picture 2</div>
+        </div>
+        <div class="gallery-item"><img src="photos/gallery2.png" alt="">
+            <div class="gallery-caption">Picture 3</div>
+        </div>
+        <div class="gallery-item"><img src="photos/gallery3.png" alt="">
+            <div class="gallery-caption">Picture 4</div>
+        </div>
+        <div class="gallery-item"><img src="photos/gallery4.png" alt="">
+            <div class="gallery-caption">Picture 5</div>
+        </div>
+        <div class="gallery-item"><img src="photos/gallery5.png" alt="">
+            <div class="gallery-caption">Picture 6</div>
+        </div>
+        <div class="gallery-item"><img src="photos/gallery6.png" alt="">
+            <div class="gallery-caption">Picture 7</div>
+        </div>
+        <div class="gallery-item"><img src="photos/gallery7.png" alt="">
+            <div class="gallery-caption">Picture 8</div>
+        </div>
+        <div class="gallery-item"><img src="photos/gallery8.png" alt="">
+            <div class="gallery-caption">Picture 9</div>
+        </div>
+    </section>
+
     <footer>
         <h3>&copy; All Rights Reserved</h3>
         <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
