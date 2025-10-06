@@ -63,6 +63,7 @@ footer {
 .kids-logo h4{
   font-size: 24px;
   color: rgb(0, 0, 0);
+  font-weight: normal;
 }
 
 /* changed */
@@ -86,11 +87,6 @@ footer {
   transition: all 0.3s ease;
 }
 
-.kids-logo h2 {
-  font-size: 26px;
-  font-weight: bold;
-  color: #222;
-}
 
 .kids-logo span {
   color: #e60073;
@@ -185,7 +181,7 @@ footer {
 button {
   padding: 8px 15px;
   border: none;
-  background: #f39c12;
+  background: #1d9ff0;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -449,4 +445,3 @@ footer {
   background-color: #e63939;
   transform: scale(1.05);
 }
-

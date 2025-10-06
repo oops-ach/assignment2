@@ -1,0 +1,26 @@
+body {
+  font-family: "Times New Roman", serif;
+  color: #000;
+  line-height: 1.6;
+  background: #fff;
+}
+
+@media (min-width: 992px) {
+  main {
+    border-right: 2px solid #ddd;
+  }
+}
+
+img {
+  border-radius: 6px;
+}
+
+aside ul li:hover {
+  color: #198754; 
+  transition: color 0.3s ease;
+}
+
+footer {
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+}

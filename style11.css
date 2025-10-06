@@ -100,7 +100,7 @@ main {
 .about-img {
   display: block;
   max-width: 400px;
-  margin: 20px auto;
+  margin: 20px 0 20px ;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
