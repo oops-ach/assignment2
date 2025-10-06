@@ -1,0 +1,264 @@
+body {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header, footer {
+  width: 100%;
+  padding: 20px 120px;
+  background-color: red;
+  z-index: 100;
+}
+
+header {
+  position: relative;
+  bottom: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  top: 100px;
+  text-align: center;
+  background-color: red;
+  color: black;
+  position: relative;
+  clear: both;
+}
+
+.header_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header_logo h4 {
+  font-size: 24px;
+  color: black;
+}
+
+.header_menu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.header_menu li {
+  margin-right: 20px;
+}
+
+.header_menu a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header_menu img {
+  width: 30px;
+  height: auto;
+}
+
+.header_menu a:hover {
+  background-color: white;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.4s ease;
+}
+
+.kids-header {
+  background: #e42626;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kids-logo h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #222;
+}
+
+.kids-logo span {
+  color: #e60073;
+}
+
+.kids-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.kids-nav a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #222;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.kids-nav a:hover,
+.kids-nav a.active {
+  background: #fff;
+  color: #e60073;
+}
+
+.help-container {
+  padding: 40px;
+}
+
+.help-container h2 {
+  margin-bottom: 10px;
+}
+
+.quick-assists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.quick-assists div {
+  line-height: 1.8;
+}
+
+.quick-assists h3 {
+  margin-bottom: 10px;
+}
+
+.quick-assists a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.quick-assists a:hover {
+  text-decoration: underline;
+}
+
+.contact-us {
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+}
+
+.contact-options {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-options div {
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+.contact-options span {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.welcome-banner-kids {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff7e6;
+}
+
+.welcome-banner-kids h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.welcome-banner-kids p {
+  font-size: 16px;
+  color: #666;
+}
+
+.kids-collection {
+  padding: 40px 100px;
+  text-align: center;
+}
+
+.kids-collection h1 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.kids-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.kids-card {
+  background: #fff;
+  border: 2px solid #f0c27b;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.kids-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.kids-info {
+  padding: 14px;
+  text-align: left;
+}
+
+.kids-color {
+  font-size: 12px;
+  color: #999;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.kids-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kids-brand {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.kids-price {
+  font-size: 14px;
+  color: #008000;
+  font-weight: bold;
+}
+
+.kids-desc {
+  font-size: 13px;
+  color: #666;
+  margin-top: 6px;
+}
+
+.kids-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
