@@ -1,4 +1,4 @@
-<<<<<<<< HEAD:style_account.css
+
 body {
     padding-top: 80px; /* Adjust based on header height */
     padding-bottom: 60px; /* Adjust based on footer height */
@@ -166,7 +166,8 @@ footer {
   height: 100%;
   object-fit: cover;
   display: block;
-========
+} 
+
 body {
     padding-top: 80px; /* Adjust based on header height */
     padding-bottom: 60px; /* Adjust based on footer height */
@@ -334,5 +335,4 @@ footer {
   height: 100%;
   object-fit: cover;
   display: block;
->>>>>>>> a99b499 (Added new photos and styles):styles/style_account.css
 }

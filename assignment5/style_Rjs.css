@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form input {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+}
+
+.faq {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+}
+
+.faq-title {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.faq-content {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-button {
+  background-color: #28a745;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.close-popup {
+  background-color: #dc3545;
+  margin-top: 10px;
+}
+
+.popup input {
+  width: 100%;
+  padding: 10px;
+  margin: auto;
+  margin-left: -10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.popup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup form button {
+  width: 100%;
+}
+
+.change-bg-button {
+  display: block;
+  margin: 20px auto;
+  background-color: #ffc107;
+}
+
+.current-time {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
