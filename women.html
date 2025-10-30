@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demon Slayer Store</title>
   <link rel="stylesheet" href="styles/style_women.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </head>
-
-
-<div id="notification" class="notification">
-  <span id="notification-text">Item added successfully</span>
-</div>
-
-
 <body>
+
+  <div id="notification">
+    <span id="notification-text">Item added to cart!</span>
+  </div>
 
   <header>
     <nav class="header_nav">
       <div class="header_logo">
-        <img src="photos/logoNoBack.png">
+        <img src="photos/logoNoBack.png" alt="Logo">
         <h4>Demon Slayer</h4>
-        <div class="header_logo"></div>
       </div>
 
       <ul class="header_menu">
@@ -41,19 +35,10 @@
 
   <div id="cart-container">
     <button id="cartButton" class="cart-button">
-      Cart (0) 
+      Cart (0) - $0.00
     </button>
   </div>
 
-  <!-- Notification System -->
-  <div id="notification" class="notification">
-    <span id="notification-text">Item added to cart!</span>
-  </div>
-
-
-
-
-  <!-- Main Content -->
   <main>
     <section class="new-arrivals">
       <h1>Women's Catalog</h1>
@@ -66,10 +51,10 @@
               <span class="product-price">$95.00</span>
             </div>
             <p>Custom Nezuko Demon Slayer Kimono</p>
-            <button class="add-to-cart-btn" data-product-name="Nezuko Kimono" data-product-price="95.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Nezuko Kimono" data-product-price="95.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/hoodieanime.jpg" alt="Anime Hoodie">
           <div class="product-info">
@@ -78,10 +63,10 @@
               <span class="product-price">$110.00</span>
             </div>
             <p>Casual Anime-Inspired Hoodie</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Hoodie" data-product-price="110.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime Hoodie" data-product-price="110.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/hinata_sneakers.jpg" alt="Hinata Sneakers">
           <div class="product-info">
@@ -90,10 +75,10 @@
               <span class="product-price">$125.00</span>
             </div>
             <p>Naruto Hinata Low Top Sneakers</p>
-            <button class="add-to-cart-btn" data-product-name="Hinata Sneakers" data-product-price="125.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Hinata Sneakers" data-product-price="125.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/backpack_anime.jpeg" alt="Anime Backpack">
           <div class="product-info">
@@ -102,10 +87,10 @@
               <span class="product-price">$89.00</span>
             </div>
             <p>Anime Style Backpack</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Backpack" data-product-price="89.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime Backpack" data-product-price="89.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/cap_anime.jpg" alt="Anime Cap">
           <div class="product-info">
@@ -114,10 +99,10 @@
               <span class="product-price">$89.00</span>
             </div>
             <p>Anime Style Cap</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Cap" data-product-price="89.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime Cap" data-product-price="89.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/scarf_anime.jpeg" alt="Anime Scarf">
           <div class="product-info">
@@ -126,10 +111,10 @@
               <span class="product-price">$89.00</span>
             </div>
             <p>Anime Style Scarf</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Scarf" data-product-price="89.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime Scarf" data-product-price="89.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/tshirt_anime.jpeg" alt="Anime T-Shirt">
           <div class="product-info">
@@ -138,10 +123,10 @@
               <span class="product-price">$89.00</span>
             </div>
             <p>Anime Style T-Shirt</p>
-            <button class="add-to-cart-btn" data-product-name="Anime T-Shirt" data-product-price="89.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime T-Shirt" data-product-price="89.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/custom_anime.jpg" alt="Anime Custom">
           <div class="product-info">
@@ -150,14 +135,12 @@
               <span class="product-price">$89.00</span>
             </div>
             <p>Anime Style Custom</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Custom" data-product-price="89.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime Custom" data-product-price="89.00">Add to cart</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!--Gallery-->
     <section>
       <h2>Gallery</h2>
       <div class="gallery">
@@ -199,10 +182,8 @@
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
   <footer>
     <h3>&copy; All Rights Reserved</h3>
     <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
@@ -211,5 +192,4 @@
   <script src="script-women-about.js"></script>
 
 </body>
-
 </html>
