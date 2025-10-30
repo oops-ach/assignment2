@@ -4,31 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demon Slayer Merchandise Shop</title>
-    <link rel="icon" type="image/x-icon" href="C:\Users\erabo\Desktop\assignment2\logo.png">
+    <link rel="icon" type="image/x-icon" href="photos/logo.png">
     <link rel="stylesheet" href="styles/style_index.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
 </head>
 <body>
+  
+  <div class="scroll_progress">
+    <p></p>
+  </div>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle-btn">
+        <span id="theme-icon">🌙</span>
+    </button>
 
     <header>
         <nav class="header_nav">
             <div class="header_logo">
-              <img src="photos/logoNoBack.png" alt="logo" class="logono">
+                <img src="photos/logoNoBack.png" alt="logo" class="logono">
                 <h4>Demon Slayer</h4>
-                <div class="header_logo_overlay"></div>
             </div>
 
-            <ul class="header_menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="account.html">Account</a></li>
-                <li><a href="new.html">New</a></li>
-                <li><a href="men.html">Men</a></li>
-                <li><a href="women.html">Women</a></li>
-                <li><a href="kids.html">Kids</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="help.html">Help</a></li>
+            <ul class="header_menu" id="main-menu">
+                <li><a href="index.html" class="menu-item">Home</a></li>
+                <li><a href="account.html" class="menu-item">Account</a></li>
+                <li><a href="new.html" class="menu-item">New</a></li>
+                <li><a href="men.html" class="menu-item">Men</a></li>
+                <li><a href="women.html" class="menu-item">Women</a></li>
+                <li><a href="kids.html" class="menu-item">Kids</a></li>
+                <li><a href="about.html" class="menu-item">About</a></li>
+                <li><a href="help.html" class="menu-item">Help</a></li>
             </ul>
         </nav>
     </header>
+
     <div class="container">
         <video autoplay loop muted plays-inline class="background-clip">
             <source src="photos/videoplayback.mp4" type="video/mp4">
@@ -38,152 +49,169 @@
         </div>
     </div>
 
-<main>
-  <div class="categories">
-    <h1 id="main">Demon Slayer Catalog</h1>
-    <div class="small-container">
-      <div class="row">
-        <div class="col-3">
-          <a rel="men" href="men.html"><img src="photos/image11.avif" alt="Image 1"></a>
-          <h4>Men Catalog</h4>
+    <main>
+        <div class="categories">
+            <h1 id="main">Demon Slayer Catalog</h1>
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-3">
+                        <a rel="men" href="men.html"><img src="photos/image11.avif" alt="Image 1"></a>
+                        <h4>Men Catalog</h4>
+                    </div>
+                    <div class="col-3">
+                        <a rel="women" href="women.html"><img src="photos/image12.avif" alt="Image 2"></a>
+                        <h4>Women Catalog</h4>
+                    </div>
+                    <div class="col-3">
+                        <a rel="kids" href="kids.html"><img src="photos/image3.jpg" alt="Image 3"></a>
+                        <h4>Kids Catalog</h4>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-3">
-          <a rel="women" href="women.html"><img src="photos/image12.avif" alt="Image 2"></a>
-          <h4>Women Catalog</h4>
-        </div>
-        <div class="col-3">
-          <a rel="kids" href="kids.html"><img src="photos/image3.jpg" alt="Image 3"></a>
-          <h4>Kids Catalog</h4>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="content-new">
-    <div class="text-new">
-        <h2>New Demon Slayer Merchandise cloth From film</h2>
-<p>
-Step into the world of <strong>Kimetsu no Yaiba (Demon Slayer)</strong> with our exclusive 
-<em>Demon Slayer Merchandise Cloth Collection</em> — a line of designs directly inspired 
-by the anime’s breathtaking visuals and the unforgettable outfits of its legendary characters. 
-This isn’t just merchandise; it’s your gateway to becoming part of the Demon Slayer universe.
-</p>
+        <div class="content-new">
+            <div class="text-new">
+                <h2>New Demon Slayer Merchandise cloth From film</h2>
+                <div class="short-content">
+                    <p>
+                        Step into the world of <strong>Kimetsu no Yaiba (Demon Slayer)</strong> with our exclusive 
+                        <em>Demon Slayer Merchandise Cloth Collection</em> — a line of designs directly inspired 
+                        by the anime's breathtaking visuals and the unforgettable outfits of its legendary characters.
+                    </p>
+                </div>
+                
+                <div class="full-content" style="display: none;">
+                    <p>
+                        From <strong>Tanjiro's checkered haori</strong> symbolizing courage and compassion, 
+                        to <strong>Nezuko's delicate pink kimono pattern</strong> embodying elegance and resilience, every piece is designed with incredible accuracy.
+                    </p>
 
-<p>
-From <strong>Tanjiro’s checkered haori</strong> symbolizing courage and compassion, 
-to <strong>Nezuko’s delicate pink kimono pattern</strong> embodying elegance and resilience, every piece is designed with incredible accuracy. 
-The <strong>thunder motif of Zenitsu</strong> and <strong>wild aesthetic of Inosuke</strong> 
-are also captured in stunning detail, so whichever character you admire most, their spirit can now live in your wardrobe.
-</p>
+                    <h3>✨ Crafted with Care</h3>
+                    <p>
+                        Every cloth in this collection is made from <strong>high-quality, breathable fabric</strong> that balances comfort with durability.
+                    </p>
 
-<h3>✨ Crafted with Care</h3>
-<p>
-Every cloth in this collection is made from <strong>high-quality, breathable fabric</strong> that balances comfort with durability. 
-The material is light enough for everyday wear yet strong enough to hold its vibrant color and patterns even after repeated washes. 
-You’ll not only look amazing but also feel comfortable whether you’re at home, outdoors, or at a convention.
-</p>
+                    <h3>🌟 Why You'll Love It</h3>
+                    <ul>
+                        <li><strong>Authentic Designs:</strong> Directly inspired by outfits seen in the anime and film.</li>
+                        <li><strong>Premium Fabric:</strong> Soft, durable, and made to last.</li>
+                        <li><strong>Unisex & Versatile:</strong> Perfect for fans of all ages and styles.</li>
+                    </ul>
+                </div>
+                
+                <button id="read-more-btn" class="read-more-btn">Read More</button>
+            </div>
+            <img src="photos/image4.webp" alt="New" class="img-new">
+        </div>
 
-<h3>🌟 Why You’ll Love It</h3>
-<ul>
-  <li><strong>Authentic Designs:</strong> Directly inspired by outfits seen in the anime and film.</li>
-  <li><strong>Premium Fabric:</strong> Soft, durable, and made to last.</li>
-  <li><strong>Unisex & Versatile:</strong> Perfect for fans of all ages and styles.</li>
-  <li><strong>Collector’s Item:</strong> Limited-edition pieces that every fan will treasure.</li>
-  <li><strong>Perfect for Cosplay:</strong> Instantly recognizable designs that bring your favorite characters to life.</li>
-</ul>
+        <!-- Gallery Container with Filter Buttons -->
+        <div class="gallery_container">
+            <h1 id="gallery_id">Demon Slayer Best Selling Categories</h1>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="clothes">Clothes</button>
+                <button class="filter-btn" data-filter="shoes">Shoes</button>
+                <button class="filter-btn" data-filter="new">New</button>
+            </div>
 
-<h3>🎭 How to Style It</h3>
-<p>
-Our Demon Slayer merchandise isn’t just for cosplay — it’s for everyday life, too:
-</p>
-<ul>
-  <li><strong>Everyday Fashion:</strong> Pair it with jeans, sneakers, or even formal wear for a subtle anime-inspired style.</li>
-  <li><strong>Cosplay & Conventions:</strong> Stand out at anime events with authentic-looking patterns and designs.</li>
-  <li><strong>Collector’s Display:</strong> Even if you don’t wear it daily, these pieces look amazing as part of a collector’s showcase.</li>
-</ul>
+            <div class="grid_container" id="gallery-grid">
+                <div class="gallery_img" data-category="clothes">
+                    <a class="grid_image_link" href="women.html"><img src="photos/nezuko hoodie.webp" alt="HOODIES"></a>
+                    <h4>Hoodies</h4>
+                </div>
+                <div class="gallery_img" data-category="clothes">
+                    <a class="grid_image_link" href="men.html"><img src="photos/t-shirt.jpg" alt="T-Shirt"></a>
+                    <h4>T-Shirt</h4>
+                </div>
+                <div class="gallery_img" data-category="shoes">
+                    <a class="grid_image_link" href="men.html"><img src="photos/shoes.jpg" alt="Shoes"></a>
+                    <h4>Shoes</h4>
+                </div>
+                <div class="gallery_img" data-category="clothes">
+                    <a class="grid_image_link" href="men.html"><img src="photos/kimono.jpg" alt="Kimono"></a>
+                    <h4>Kimonos</h4>
+                </div>
+                <div class="gallery_img" data-category="new">
+                    <a class="grid_image_link" href="new.html"><img src="photos/decor.jpg" alt="Decor"></a>
+                    <h4>Decors</h4>
+                </div>
+                <div class="gallery_img" data-category="new">
+                    <a class="grid_image_link" href="new.html"><img src="photos/phone-case.jpg" alt="Phone-Case"></a>
+                    <h4>Phone-Cases</h4>
+                </div>
+                <div class="gallery_img" data-category="new">
+                    <a class="grid_image_link" href="new.html"><img src="photos/mugs.jpg" alt="Mug"></a>
+                    <h4>Mugs</h4>
+                </div>
+                <div class="gallery_img" data-category="new">
+                    <a class="grid_image_link" href="men.html"><img src="photos/zenitsu sneeaker.jpg" alt="Figures"></a>
+                    <h4>Figures</h4>
+                </div>
+                <div class="gallery_img" data-category="new">
+                    <a class="grid_image_link" href="new.html"><img src="photos/mask.jpg" alt="Mask"></a>
+                    <h4>Masks</h4>
+                </div>
+            </div>
+        </div>
 
-<h3>🎁 The Perfect Gift</h3>
-<p>
-Looking for the ideal present for a Demon Slayer fan? This collection makes an unforgettable gift for <strong>birthdays, holidays, or special surprises</strong>. 
-Every fan dreams of owning something that brings them closer to their favorite anime — and this cloth collection does exactly that.
-</p>
+        <!-- Discount Box with Close Button -->
+        <div class="mini-discount-box" id="discount-box">
+            <button class="close-btn" id="close-discount">&times;</button>
+            <p class="discount-text">
+                <strong>Limited Time!</strong><br>
+                <span class="amount">20% OFF</span> on all <em>hoodies</em><br>
+                Use code <span class="code">SLAYER20</span>
+            </p>
+            <a class="shop-btn" href="account.html">Shop Now</a>
+        </div>
 
-<h3>🧵 Care & Durability</h3>
-<p>
-To keep your merchandise looking as stunning as the day you bought it:
-</p>
-<ul>
-  <li>Machine wash cold with similar colors.</li>
-  <li>Use gentle detergent to preserve fabric quality.</li>
-  <li>Avoid direct sunlight for drying to maintain vibrant colors.</li>
-  <li>Iron on low heat if needed (avoid high heat to protect the print).</li>
-</ul>
+        <section class="num_count">
+          <div class="num">
+            <h3 class="count" data-stop="6969">6969</h3>
+            <p>Customers Around World</p>
+          </div>
+          <div class="num">
+            <h3 class="count" data-stop="12000">12000</h3>
+            <p>Products Sold</p>
+          </div>
+        </section>
 
-<h3>💖 A Connection Beyond Fashion</h3>
-<p>
-Demon Slayer isn’t just an anime — it’s a story of <strong>courage, sacrifice, and the unbreakable bonds of family and friendship</strong>.
-Wearing these designs is more than showing fandom; it’s a reminder of the values and emotions that make the series unforgettable. 
-Each piece represents a symbol of strength, resilience, and hope — qualities every fan carries within themselves.
-     </div>
-      <img src="photos/image4.webp" alt="New" class="img-new">
-      </p> 
-  </div>
-  
-  <div class="gallery_container">
-    <h1 id="gallery_id">Demon Slayer Best Selling Categories</h1>
-    <div class="grid_container">
-        <div class="gallery_img">
-        <a class="grid_image_link" href="#1"><img src="photos/nezuko hoodie.webp" alt="HOODIES"></a>
-        <h4>Hoodies</h4>
-        </div>
-        <div class="gallery_img">
-        <a class="grid_image_link" href="#2"><img src="photos/t-shirt.jpg" alt="T-Shirt"></a>
-        <h4>T-Shirt</h4>
-        </div>
-        <div class="gallery_img">
-        <a class="grid_image_link" href="#3"><img src="photos/shoes.jpg" alt="Shoes"></a>
-        <h4>Shoes</h4>
-        </div>
-        <div class="gallery_img">
-        <a class="grid_image_link" href="#4"><img src="photos/kimono.jpg" alt="Kimono"></a>
-        <h4>Kimonos</h4>
-        </div>
-        <div class="gallery_img">
-        <a class="grid_image_link" href="#5"><img src="photos/decor.jpg" alt="Decor"></a>
-        <h4>Decors</h4>
-        </div>
-        <div class="gallery_img">
-        <a class="grid_image_link" href="#6"><img src="photos/phone-case.jpg" alt="Phone-Case"></a>
-        <h4>Phone-Cases</h4>
-        </div>
-        <div class="gallery_img">
-        <a class="grid_image_link" href="#7"><img src="photos/mugs.jpg" alt="Mug"></a>
-        <h4>Mugs</h4>
-        </div>
-        <div class="gallery_img asd">
-        <a class="grid_image_link" href="#8"><img src="photos/zenitsu sneeaker.jpg" alt="Figures"></a>
-        <h4>Figures</h4>
-        </div>
-        <div class="gallery_img">
-        <a class="grid_image_link" href="#9"><img src="photos/mask.jpg" alt="Mask"></a>
-        <h4>Masks</h4>
-        </div>
-    </div>
-  </div>
+        <!-- Statistics Section -->
+        <!-- <section class="stats">
+            <div class="stat">
+                <h3 class="count" data-target="1500">0</h3>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat">
+                <h3 class="count" data-target="350">0</h3>
+                <p>Products Sold</p>
+            </div>
+        </section> -->
 
-  <div class="mini-discount-box">
-  <p class="discount-text">
-    <strong>Limited Time!</strong><br>
-    <span class="amount">20% OFF</span> on all <em>hoodies</em><br>
-    Use code <span class="code">SLAYER20</span>
-  </p>
-  <a class="shop-btn" href="#">Shop Now</a>
-</div>
+        <!-- Subscribe Form -->
+        <!--<form id="subscribe-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" id="submit-btn">Submit</button>
+        </form> -->
+    </main>
 
-</main>
     <footer>
         <h3>&copy; All Rights Reserved</h3>
         <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
     </footer>
+
+
+
+    <!-- Audio for sound effects -->
+    <audio id="click-sound" preload="auto">
+        <source src="soundsclick.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="index_script.js"></script>
+    <script src="jq_progress.js"></script>
+    <script src="jq_numcounter.js"></script>
 </body>
 </html>

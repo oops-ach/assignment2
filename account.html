@@ -6,55 +6,114 @@
     <title>Demon Slayer Merchandise Shop</title>
     <link rel="icon" type="image/x-icon" href="photos/logo.png">
     <link rel="stylesheet" href="styles/style_account.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
 </head>
 <body>
 
     <header>
         <nav class="header_nav">
             <div class="header_logo">
-              <img src="photos/logoNoBack.png" alt="Logo" class="logo_img">
+                <img src="photos/logoNoBack.png" alt="Logo" class="logo_img">
                 <h4>Demon Slayer</h4>
                 <div class="header_logo_overlay"></div>
             </div>
 
             <ul class="header_menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="account.html">Account</a></li>
-                <li><a href="new.html">New</a></li>
-                <li><a href="men.html">Men</a></li>
-                <li><a href="women.html">Women</a></li>
-                <li><a href="kids.html">Kids</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="help.html">Help</a></li>
+                <li><a href="index.html" class="menu-item">Home</a></li>
+                <li><a href="account.html" class="menu-item">Account</a></li>
+                <li><a href="new.html" class="menu-item">New</a></li>
+                <li><a href="men.html" class="menu-item">Men</a></li>
+                <li><a href="women.html" class="menu-item">Women</a></li>
+                <li><a href="kids.html" class="menu-item">Kids</a></li>
+                <li><a href="about.html" class="menu-item">About</a></li>
+                <li><a href="help.html" class="menu-item">Help</a></li>
             </ul>
         </nav>
     </header>
-      <main>
-    <div class="login-form">
-      <div class="container-login">
-        <div class="card">
-          <div class="content-login">
-            <h2>Log In</h2>
-            <form action="" method="post">
-              <input type="text" name="username" placeholder="Username or email" required autofocus />
-              <input type="password" name="password" placeholder="User Password" required />
-              <button class="btn" type="submit">Login</button>
-            </form>
-            <p class="account">Don't Have An Account? <a href="#">Register</a></p>
-          </div>
 
-          <div class="form-img">
-            <img src="photos/poster.jpg" alt="poster" />
-          </div>
+    <main>
+        <div class="login-form">
+            <div class="container-login">
+                <div class="card">
+                    <div class="content-login">
+                        <h2>Log In</h2>
+                        <form id="login-form">
+                            <input type="text" id="login-username" name="username" placeholder="Username or email" required autofocus />
+                            <input type="password" id="login-password" name="password" placeholder="User Password" required />
+                            <button class="btn" type="submit">
+                              <span class="loading-icon hide" aria-hidden="true"></span>
+                              <span class="btn-txt">Login</span>
+                            </button>
+                        </form>
+                        <p class="account">Don't Have An Account? <a href="#" id="register-link">Register</a></p>
+                    </div>
+
+                    <div class="form-img">
+                        <img src="photos/poster.jpg" alt="poster" />
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </main>
+    </main>
 
+    <!-- Registration Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create Account</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-fullname">Full Name</label>
+                    <input type="text" id="register-fullname" name="fullname" placeholder="Enter your full name" required />
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email Address</label>
+                    <input type="email" id="register-email" name="email" placeholder="Enter your email" required />
+                </div>
+                <div class="form-group">
+                    <label for="register-username">Username</label>
+                    <input type="text" id="register-username" name="username" placeholder="Choose a username" required />
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" name="password" placeholder="Create a password" required />
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Confirm Password</label>
+                    <input type="password" id="register-confirm-password" name="confirm-password" placeholder="Confirm your password" required />
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required />
+                    <label for="terms">I agree to the Terms and Conditions</label>
+                </div>
+                <button class="btn btn-register" type="submit">
+                  <span class="loading-icon hide" aria-hidden="true"></span>
+                  <span class="btn-txt">Create Account</span>
+                </button>
+            </form>
+            <p class="account">Already have an account? <a href="#" id="login-link">Log In</a></p>
+        </div>
+    </div>
+
+    <!-- Success Message Container -->
+    <div id="success-message" class="success-message"></div>
+
+    <!-- Error Message Container -->
+    <div id="error-message" class="error-message"></div>
 
     <footer>
         <h3>&copy; All Rights Reserved</h3>
         <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
     </footer>
+
+    <!-- Audio Element for Sound Effects -->
+    <audio id="click-sound" preload="auto">
+        <source src="soundsclick.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="account_script.js"></script>
+    <script src="jq_spinner.js"></script>
 </body>
 </html>
