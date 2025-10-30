@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demon Slayer Kids</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="styles/style_kids.css">
 </head>
 
@@ -49,7 +50,7 @@
     <div class="kids-grid">
 
       <div class="kids-card">
-        <img src="photos/tanjiro backpack.jpg" alt="Kids Backpack">
+        <img class="lazy" data-src="photos/tanjiro backpack.jpg" alt="Kids Backpack">
         <div class="kids-info">
           <span class="kids-color">2 COLORS</span>
           <div class="kids-row">
@@ -58,11 +59,12 @@
           </div>
           <p class="kids-desc">Lightweight school backpack</p>
           <button class="buy-btn">Buy</button>
+          <button class="addToCartBtn">Add to Cart</button>
         </div>
       </div>
 
       <div class="kids-card">
-        <img src="photos/nezuko hoodie.webp" alt="Kids Hoodie">
+        <img class="lazy" data-src="photos/nezuko hoodie.webp" alt="Kids Hoodie">
         <div class="kids-info">
           <span class="kids-color">3 COLORS</span>
           <div class="kids-row">
@@ -71,11 +73,12 @@
           </div>
           <p class="kids-desc">Soft fleece pullover for kids</p>
           <button class="buy-btn">Buy</button>
+           <button class="addToCartBtn">Add to Cart</button>
         </div>
       </div>
 
       <div class="kids-card">
-        <img src="photos/zenitsu sneeaker.jpg" alt="Kids Sneakers">
+        <img class="lazy" data-src="photos/zenitsu sneeaker.jpg" alt="Kids Sneakers">
         <div class="kids-info">
           <span class="kids-color">1 COLOR</span>
           <div class="kids-row">
@@ -84,11 +87,12 @@
           </div>
           <p class="kids-desc">Comfortable anime sneakers</p>
           <button class="buy-btn">Buy</button>
+           <button class="addToCartBtn">Add to Cart</button>
         </div>
       </div>
 
       <div class="kids-card">
-        <img src="photos/T-shirt.jpg" alt="Kids T-Shirt">
+        <img class="lazy" data-src="photos/T-shirt.jpg" alt="Kids T-Shirt">
         <div class="kids-info">
           <span class="kids-color">4 COLORS</span>
           <div class="kids-row">
@@ -97,10 +101,11 @@
           </div>
           <p class="kids-desc">Printed cotton T-shirt</p>
           <button class="buy-btn">Buy</button>
+           <button class="addToCartBtn">Add to Cart</button>
         </div>
       </div>
       <div class="kids-card">
-        <img src="photos/haori.webp" alt="Kids Haori">
+        <img class="lazy" data-src="photos/haori.webp" alt="Kids Haori">
         <div class="kids-info">
           <span class="kids-color">3 COLORS</span>
           <div class="kids-row">
@@ -109,11 +114,12 @@
           </div>
           <p class="kids-desc">Lightweight school Haori</p>
           <button class="buy-btn">Buy</button>
+           <button class="addToCartBtn">Add to Cart</button>
         </div>
       </div>
 
       <div class="kids-card">
-        <img src="photos/Tumbler.jpg" alt="Kids Tumbler">
+        <img class="lazy" data-src="photos/Tumbler.jpg" alt="Kids Tumbler">
         <div class="kids-info">
           <span class="kids-color">3 COLORS</span>
           <div class="kids-row">
@@ -122,11 +128,12 @@
           </div>
           <p class="kids-desc">Kimetsu no Yaiba Mug-Tumbler</p>
           <button class="buy-btn">Buy</button>
+           <button class="addToCartBtn">Add to Cart</button>
         </div>
       </div>
 
       <div class="kids-card">
-        <img src="photos/Sword.jpg" alt="Kids Sword">
+        <img class="lazy" data-src="photos/Sword.jpg" alt="Kids Sword">
         <div class="kids-info">
           <span class="kids-color">1 COLOR</span>
           <div class="kids-row">
@@ -135,11 +142,12 @@
           </div>
           <p class="kids-desc">Tomioka Giyu sword</p>
           <button class="buy-btn">Buy</button>
+          <button class="addToCartBtn">Add to Cart</button>
         </div>
       </div>
 
       <div class="kids-card">
-        <img src="photos/Bags.jpg" alt="Bags">
+        <img class="lazy" data-src="photos/Bags.jpg" alt="Bags">
         <div class="kids-info">
           <span class="kids-color">2 COLORS</span>
           <div class="kids-row">
@@ -148,6 +156,7 @@
           </div>
           <p class="kids-desc">Art Print Designed Canvas Tote Bags</p>
           <button class="buy-btn">Buy</button>
+          <button class="addToCartBtn">Add to Cart</button> 
         </div>
       </div>
 
@@ -159,48 +168,51 @@
 
     <div class="gallery">
       <div class="gallery-item">
-        <img src="photos/Tanjiro.jpg" alt="Tanjiro">
+        <img class="lazy" data-src="photos/Tanjiro.jpg" alt="Tanjiro">
         <div class="caption">Tanjiro</div>
       </div>
       <div class="gallery-item">
-        <img src="photos/Tengen.jpg" alt="Tengen">
+        <img class="lazy" data-src="photos/Tengen.jpg" alt="Tengen">
         <div class="caption">Tengen</div>
       </div>
       <div class="gallery-item">
-        <img src="photos/Tomioka.jpg" alt="Tomioka">
+        <img class="lazy" data-src="photos/Tomioka.jpg" alt="Tomioka">
         <div class="caption">Giyu</div>
       </div>
       <div class="gallery-item">
-        <img src="photos/Sanemi.jpg" alt="Sanemi">
+        <img class="lazy" data-src="photos/Sanemi.jpg" alt="Sanemi">
         <div class="caption">Sanemi</div>
       </div>
       <div class="gallery-item">
-        <img src="photos/Shinobu.jpg" alt="Shinobu">
+        <img class="lazy" data-src="photos/Shinobu.jpg" alt="Shinobu">
         <div class="caption">Shinobu</div>
       </div>
       <div class="gallery-item">
-        <img src="photos/Obanai.jpg" alt="Obanai">
+        <img class="lazy" data-src="photos/Obanai.jpg" alt="Obanai">
         <div class="caption">Obanai</div>
       </div>
       <div class="gallery-item">
-        <img src="photos/Muichiro.jpg" alt="Muichiro">
+        <img class="lazy" data-src="photos/Muichiro.jpg" alt="Muichiro">
         <div class="caption">Muichiro</div>
       </div>
       <div class="gallery-item">
-        <img src="photos/Mitsuri.jpg" alt="Mitsuri">
+        <img class="lazy" data-src="photos/Mitsuri.jpg" alt="Mitsuri">
         <div class="caption">Mitsuri</div>
       </div>
       <div class="gallery-item">
-        <img src="photos/Rengoku.jpg" alt="Rengoku">
+        <img class="lazy" data-src="photos/Rengoku.jpg" alt="Rengoku">
         <div class="caption">Rengoku</div>
       </div>
     </div>
   </main>
 
+<div id="notification" class="notification">Item added to cart!</div>
+
   <footer>
     <h3>&copy; All Rights Reserved</h3>
     <h4>Ersultan, Ramazan, Sultan and Yernar</h4>
   </footer>
+  <script src="kids.js"></script>
 </body>
 
 </html>

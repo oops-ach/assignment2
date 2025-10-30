@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demon Slayer Help</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="styles/style_kids.css">
 </head>
 <body class="help_body">
+
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
 
   <header class="kids-header">
     <div class="kids-logo">
@@ -94,12 +99,38 @@
       </div>
     </div>
 
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <br>
+        <button type="submit" id="submitBtn">Submit</button>
+      </form>
+      <div id="formStatus"></div>
+    </div>
+
+    <div class="copy-section">
+      <p id="textToCopy">This is the text to copy!</p>
+      <button class="copy-btn" data-clipboard-target="#textToCopy">Copy</button>
+      <div id="copyTooltip" class="tooltip">Copied to clipboard!</div>
+    </div>
+
   </main>
 
   <footer>
     <h3>&copy; All Rights Reserved</h3>
-    <h4>Ersultan, Ramazan, Sultan and Yernar</h4>
+    <h4>Ersultan, Ramazan, Sultan, and Yernar</h4>
   </footer>
+
+  <script src="help.js"></script>
 
 </body>
 </html>
+
