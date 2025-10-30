@@ -150,3 +150,37 @@ header { grid-area: header; }
 .sidebar { grid-area: sidebar; }
 main { grid-area: main; }
 footer { grid-area: footer; }
+
+/* Стиль для кнопки "Copy" */
+.copy-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.copy-btn:hover {
+  background-color: #45a049;
+}
+
+/* Подсказка "Copied to clipboard" */
+.copy-tooltip {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+}
+
+.copy-btn.copied + .copy-tooltip {
+  display: block;
+}
