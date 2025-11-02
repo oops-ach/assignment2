@@ -1,8 +1,6 @@
 $(document).ready(function() {
-  // ========== CART MANAGEMENT ==========
   let cart = [];
 
-  // Update cart button display
   function updateCartButton() {
     let totalPrice = 0;
     cart.forEach(item => {
@@ -11,7 +9,6 @@ $(document).ready(function() {
     $('#cartButton').text(`Cart (${cart.length}) - $${totalPrice.toFixed(2)}`);
   }
 
-  // Show notification when item added
   function showNotification() {
     $('#notification').removeClass('show');
     setTimeout(() => {
@@ -22,7 +19,6 @@ $(document).ready(function() {
     }, 10);
   }
 
-  // Add to cart button click event
   $('.add-to-cart-btn').on('click', function() {
     const productName = $(this).data('product-name');
     const productPrice = parseFloat($(this).data('product-price'));
@@ -36,7 +32,6 @@ $(document).ready(function() {
     updateCartButton();
   });
 
-  // Cart button click event - show cart contents
   $('#cartButton').on('click', function() {
     if (cart.length === 0) {
       alert('Your cart is empty!');
@@ -47,14 +42,12 @@ $(document).ready(function() {
     }
   });
 
-  // ========== LAZY LOADING IMAGES ==========
   let lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
 
   function lazyLoad() {
     lazyImages = lazyImages.filter(function(lazyImage) {
       const rect = lazyImage.getBoundingClientRect();
-      
-      // Check if image is near viewport (200px buffer)
+
       if (rect.top <= window.innerHeight + 200 && rect.bottom >= 0) {
         const src = lazyImage.getAttribute('data-src');
         if (src) {
