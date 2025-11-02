@@ -55,21 +55,20 @@ $(document).ready(function() {
           lazyImage.classList.add('loaded');
           lazyImage.removeAttribute('data-src');
         }
-        return false; // Remove from array (loaded)
+        return false; 
       }
-      return true; // Keep in array (not loaded yet)
+      return true; 
     });
 
-    // Stop listening if all images loaded
+  
     if (lazyImages.length === 0) {
       $(window).off('scroll', lazyLoad);
     }
   }
 
-  // Attach scroll event for lazy loading
   $(window).on('scroll', lazyLoad);
   
-  // Initial load for images already in viewport
+
   lazyLoad();
 
 $(document).ready(function() {
