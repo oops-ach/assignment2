@@ -69,17 +69,4 @@ $(document).ready(function() {
   $(window).on('scroll', lazyLoad);
   
 
-  lazyLoad();
-
-$(document).ready(function() {
-  $('.copy-btn').on('click', function() {
-    var text = $(this).data('clipboard-text');
-    navigator.clipboard.writeText(text).then(function() {
-      $(this).addClass('copied');
-      $(this).next('.copy-tooltip').fadeIn().delay(1000).fadeOut();
-      $(this).text('Copied!');
-    }.bind(this));
-  });
-});
-
 });

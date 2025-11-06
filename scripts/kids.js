@@ -24,7 +24,9 @@ $(document).ready(function() {
       }
     });
   }
-
+я
   $(window).on('scroll', lazyLoad);
   lazyLoad(); 
 });
+
+document.getE

@@ -38,56 +38,87 @@
     <h2>Quick Assists</h2>
     <p>Answers to our most frequently asked questions are just one click away.</p>
     <div class="quick-assists">
-      <div>
+      <div class="faq-item">
         <h3>Returns & Exchanges</h3>
-        <a href="#">What is Demon Slayer's return policy?</a>
-        <a href="#">How do I return or exchange my order?</a>
-        <a href="#">Where is my refund?</a>
-        <a href="#">View all</a>
+        <a href="javascript:void(0)" class="faq-question">What is Demon Slayer's return policy?</a>
+        <p class="faq-answer">Demon Slayer accepts returns within 30 days of purchase. The product must be unused and in its original condition with tags attached.</p>
+
+        <a href="javascript:void(0)" class="faq-question">How do I return or exchange my order?</a>
+        <p class="faq-answer">To return or exchange, please visit our Returns page or contact our customer support team.</p>
+
+        <a href="javascript:void(0)" class="faq-question">Where is my refund?</a>
+        <p class="faq-answer">Refunds are processed within 5-7 business days. Please check your bank or payment provider for updates.</p>
       </div>
-      <div>
+
+      <div class="faq-item">
         <h3>Shipping & Delivery</h3>
-        <a href="#">What are the shipping options?</a>
-        <a href="#">Can I pick up in store?</a>
-        <a href="#">How do I get free shipping?</a>
-        <a href="#">View all</a>
+        <a href="javascript:void(0)" class="faq-question">What are the shipping options?</a>
+        <p class="faq-answer">We offer standard and expedited shipping options, available at checkout.</p>
+
+        <a href="javascript:void(0)" class="faq-question">Can I pick up in store?</a>
+        <p class="faq-answer">Currently, in-store pickup is not available. All orders are shipped directly to your address.</p>
+
+        <a href="javascript:void(0)" class="faq-question">How do I get free shipping?</a>
+        <p class="faq-answer">Free shipping is available for orders over $100. Look for promotions offering free shipping at checkout.</p>
       </div>
-      <div>
+
+      <div class="faq-item">
         <h3>Orders & Payment</h3>
-        <a href="#">Where is my order?</a>
-        <a href="#">Can I cancel or change my order?</a>
-        <a href="#">What are the payment options?</a>
-        <a href="#">View all</a>
+        <a href="javascript:void(0)" class="faq-question">Where is my order?</a>
+        <p class="faq-answer">Track your order status by visiting the "Order Tracking" page or checking your confirmation email.</p>
+
+        <a href="javascript:void(0)" class="faq-question">Can I cancel or change my order?</a>
+        <p class="faq-answer">Orders can be canceled or changed within 1 hour of placing the order. Please contact our support team immediately.</p>
+
+        <a href="javascript:void(0)" class="faq-question">What are the payment options?</a>
+        <p class="faq-answer">We accept credit cards, PayPal, and other payment methods supported by our checkout system.</p>
       </div>
-      <div>
-        <h3>Shopping</h3>
-        <a href="#">How do I find the right size?</a>
-        <a href="#">How can I get the best deals?</a>
-        <a href="#">Do you offer product advice?</a>
-        <a href="#">View all</a>
-      </div>
-      <div>
+
+      <div class="faq-item">
         <h3>Membership & Apps</h3>
-        <a href="#">What is Membership?</a>
-        <a href="#">What is Special Access?</a>
-        <a href="#">How do I join events?</a>
-        <a href="#">View all</a>
+        <a href="javascript:void(0)" class="faq-question">What is Membership?</a>
+        <p class="faq-answer">Membership gives you access to exclusive discounts, early product releases, and special events.</p>
+
+        <a href="javascript:void(0)" class="faq-question">What is Special Access?</a>
+        <p class="faq-answer">Special Access allows you to purchase limited-edition items and participate in special events.</p>
+
+        <a href="javascript:void(0)" class="faq-question">How do I join events?</a>
+        <p class="faq-answer">You can join events by signing up on our website. Check our Events page for more details.</p>
       </div>
-      <div>
+
+      <div class="faq-item">
         <h3>Company Info</h3>
-        <a href="#">Do products have a warranty?</a>
-        <a href="#">Can I recycle items?</a>
-        <a href="#">Do you offer grants or donations?</a>
-        <a href="#">View all</a>
+        <a href="javascript:void(0)" class="faq-question">Do products have a warranty?</a>
+        <p class="faq-answer">Yes, most products come with a 1-year warranty. Please check the product description for warranty details.</p>
+
+        <a href="javascript:void(0)" class="faq-question">Can I recycle items?</a>
+        <p class="faq-answer">We accept product returns for recycling. Please visit our Recycling page for more information.</p>
+
+        <a href="javascript:void(0)" class="faq-question">Do you offer grants or donations?</a>
+        <p class="faq-answer">Yes, we have a foundation that provides grants for community projects. Learn more on our "Giving Back" page.</p>
       </div>
+
+      <div class="faq-item">
+        <h3>Shopping</h3>
+        <a href="javascript:void(0)" class="faq-question">How do I find the right size?</a>
+        <p class="faq-answer">Please check our size guide on each product page to find the best fit for your measurements.</p>
+
+        <a href="javascript:void(0)" class="faq-question">How can I get the best deals?</a>
+        <p class="faq-answer">Sign up for our newsletter to get exclusive discounts, or check our "Sales" section for limited-time offers.</p>
+
+        <a href="javascript:void(0)" class="faq-question">Do you offer product advice?</a>
+        <p class="faq-answer">Yes, our customer service team is happy to help you find the right products. You can reach out through our contact page.</p>
+      </div>   
     </div>
+
+
 
     <div class="contact-us">
       <h2>Contact Us</h2>
       <div class="contact-options">
         <div>
           <strong>💬 Chat with us</strong>
-          <span><button>Telegram</button><br></span>
+          <a href="https://web.telegram.org/k/"><span><button>Telegram</button><br></span></a>
         </div>
         <div>
           <strong>📞 Call us</strong>
@@ -115,12 +146,6 @@
         <button type="submit" id="submitBtn">Submit</button>
       </form>
       <div id="formStatus"></div>
-    </div>
-
-    <div class="copy-section">
-      <p id="textToCopy">This is the text to copy!</p>
-      <button class="copy-btn" data-clipboard-target="#textToCopy">Copy</button>
-      <div id="copyTooltip" class="tooltip">Copied to clipboard!</div>
     </div>
 
   </main>
