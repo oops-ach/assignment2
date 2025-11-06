@@ -140,11 +140,11 @@ function renderProducts(category = 'all') {
             <div class="product-price">${product.price}</div>
             <div class="product-desc" id="desc-${product.id}">${product.description}</div>
             <div class="rating" data-product-id="${product.id}">
-                <span class="star" data-rating="1">★</span>
-                <span class="star" data-rating="2">★</span>
-                <span class="star" data-rating="3">★</span>
-                <span class="star" data-rating="4">★</span>
-                <span class="star" data-rating="5">★</span>
+                <span class="star" data-rating="1">&#9733</span>
+                <span class="star" data-rating="2">&#9733</span>
+                <span class="star" data-rating="3">&#9733</span>
+                <span class="star" data-rating="4">&#9733</span>
+                <span class="star" data-rating="5">&#9733</span>
             </div>
             <button class="btn btn-primary add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
         `;

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demon Slayer Store</title>
+  <link rel="icon" type="image/x-icon" href="photos/logo.png">
   <link rel="stylesheet" href="styles/style_women.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -14,24 +15,33 @@
   </div>
 
   <header>
-    <nav class="header_nav">
-      <div class="header_logo">
-        <img src="photos/logoNoBack.png" alt="Logo">
-        <h4>Demon Slayer</h4>
-      </div>
+        <nav class="header_nav">
+            <div class="header_logo">
+                <img src="photos/logoNoBack.png" alt="Logo" class="logo_img">
+                <h4>Demon Slayer</h4>
+                <div class="header_logo_overlay"></div>
+            </div>
 
-      <ul class="header_menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="account.html">Account</a></li>
-        <li><a href="new.html">New</a></li>
-        <li><a href="men.html">Men</a></li>
-        <li><a href="women.html">Women</a></li>
-        <li><a href="kids.html">Kids</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="help.html">Help</a></li>
-      </ul>
-    </nav>
-  </header>
+            <ul class="header_menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="new.html">New</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="dayBtn" class="theme-btn active">
+                    <span class="icon"><i class="fa fa-sun"></i></span> <!-- Sun Icon -->
+                </button>
+                <button id="nightBtn" class="theme-btn">
+                    <span class="icon"><i class="fa fa-moon"></i></span> <!-- Moon Icon -->
+                </button>
+            </div>
+        </nav>
+    </header>
 
   <div id="cart-container">
     <button id="cartButton" class="cart-button">
