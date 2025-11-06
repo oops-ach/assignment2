@@ -9,34 +9,47 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
     crossorigin="anonymous"></script>
+
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+        
 </head>
 <body>
   
   <div class="scroll_progress">
     <p></p>
   </div>
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="theme-toggle-btn">
-        <span id="theme-icon">🌙</span>
-    </button>
-
-    <header>
+    
+  <header>
         <nav class="header_nav">
             <div class="header_logo">
-                <img src="photos/logoNoBack.png" alt="logo" class="logono">
+                <img src="photos/logoNoBack.png" alt="Logo" class="logo_img">
                 <h4>Demon Slayer</h4>
+                <div class="header_logo_overlay"></div>
             </div>
 
-            <ul class="header_menu" id="main-menu">
-                <li><a href="index.html" class="menu-item">Home</a></li>
-                <li><a href="account.html" class="menu-item">Account</a></li>
-                <li><a href="new.html" class="menu-item">New</a></li>
-                <li><a href="men.html" class="menu-item">Men</a></li>
-                <li><a href="women.html" class="menu-item">Women</a></li>
-                <li><a href="kids.html" class="menu-item">Kids</a></li>
-                <li><a href="about.html" class="menu-item">About</a></li>
-                <li><a href="help.html" class="menu-item">Help</a></li>
+            <ul class="header_menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="new.html">New</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Help</a></li>
             </ul>
+            <div class="theme-toggle">
+                <button id="dayBtn" class="theme-btn active">
+                    <span class="icon"><i class="fa fa-sun"></i></span> <!-- Sun Icon -->
+                </button>
+                <button id="nightBtn" class="theme-btn">
+                    <span class="icon"><i class="fa fa-moon"></i></span> <!-- Moon Icon -->
+                </button>
+            </div>
         </nav>
     </header>
 
@@ -179,23 +192,11 @@
           </div>
         </section>
 
-        <!-- Statistics Section -->
-        <!-- <section class="stats">
-            <div class="stat">
-                <h3 class="count" data-target="1500">0</h3>
-                <p>Happy Customers</p>
-            </div>
-            <div class="stat">
-                <h3 class="count" data-target="350">0</h3>
-                <p>Products Sold</p>
-            </div>
-        </section> -->
-
-        <!-- Subscribe Form -->
-        <!--<form id="subscribe-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit" id="submit-btn">Submit</button>
-        </form> -->
+        <form>
+            <input type="text" id="input">
+            <button type="button" id="bttt">click me</button>
+        </form>
+        <ul id="list"></ul>
     </main>
 
     <footer>
@@ -210,8 +211,8 @@
         <source src="soundsclick.mp3" type="audio/mpeg">
     </audio>
 
-    <script src="index_script.js"></script>
-    <script src="jq_progress.js"></script>
-    <script src="jq_numcounter.js"></script>
+    <script src="scripts/index_script.js"></script>
+    <script src="scripts/jq_progress.js"></script>
+    <script src="scripts/jq_numcounter.js"></script>
 </body>
 </html>

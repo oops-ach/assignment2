@@ -96,81 +96,133 @@ body.night-theme #subscribe-form input {
     transform: scale(0.95);
 }
 
-/* Header and Logo */
-.header_logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+
+header,
+footer {
+  width: 100%;
+  padding: 20px 120px;
+  background-color: #672d2d;
+  z-index: 100;
 }
 
-.logono {
-    width: 50px;
-    height: 50px;
-}
-
-header, footer {
-    width: 100%;
-    padding: 20px 120px;
-    background-color: #eb3636;
-    z-index: 100;
-}
-
+/* changed */
 header {
-    position: relative;
-    bottom: 90px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  bottom: 80px;
+  padding: 20px 120px;
+  background-color: #672d2d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+
 }
 
 footer {
-    text-align: center;
-    background-color: #eb3636;
-    color: black;
-    position: relative;
-    clear: both;
-    padding: 30px 120px;
-    margin-top: 50px;
+  top: 100px;
+  text-align: center;
+  background-color: #672d2d;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  clear: both;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .header_nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header_logo {
+  display: flex;
+  align-items: center;
+}
+
+/* added */
+.header_logo img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
 }
 
 .header_logo h4 {
-    font-size: 24px;
-    color: black;
+  font-size: 24px;
+  color: rgb(255, 255, 255);
 }
 
+/* changed */
 .header_menu {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-}
-
-.header_menu li {
-    margin-right: 20px;
+  display: flex;
+  list-style: none;
+  gap: 30px;
 }
 
 .header_menu a {
-    color: black;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: all 0.4s ease;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 16px;
 }
 
-.header_menu a:hover,
-.header_menu a:focus {
-    background-color: white;
-    outline: 2px solid #333;
+.header_menu a:hover {
+  background-color: rgb(134, 61, 61);
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Day NIGHT */
+.theme-toggle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.theme-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #333;
+}
+
+.theme-btn .icon {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.theme-btn:hover .icon {
+  transform: scale(1.2) rotate(15deg);
+}
+
+.theme-btn:hover {
+  transform: translateY(-2px);
+}
+
+.theme-btn.active {
+  background: white;
+  color: #672d2d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Video Background */
