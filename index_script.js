@@ -1,76 +1,356 @@
 
+const STORAGE_KEYS = {
+    THEME: 'demonSlayerTheme',
+    CART: 'demonSlayerCart',
+    SEARCH_HISTORY: 'demonSlayerSearchHistory'
+};
 
-// Selecting and Manipulating HTML Elements
-const galleryItems = document.querySelectorAll('.gallery_img');
-const galleryTitle = document.getElementById('gallery_id');
 
-// Modify content dynamically - Update gallery title on page load
-window.addEventListener('load', () => {
-    let itemCount = galleryItems.length;
-    galleryTitle.textContent = `Demon Slayer Best Selling Categories (${itemCount} Items)`;
-});
-
-// Dynamic Style Changes - Day/Night Theme Toggle
 const themeToggleBtn = document.getElementById('theme-toggle');
-const themeIcon = document.getElementById('theme-icon');
 const body = document.body;
 
-// Object to store theme settings
-const themeSettings = {
-    day: {
-        icon: '🌙',
-        class: 'day-theme'
-    },
-    night: {
-        icon: '☀️',
-        class: 'night-theme'
+function loadThemePreference() {
+    const savedTheme = localStorage.getItem(STORAGE_KEYS.THEME);
+    if (savedTheme === 'night') {
+        body.classList.add('night-theme');
+        body.classList.remove('day-theme');
+        themeToggleBtn.textContent = 'Day';
+    } else {
+        body.classList.add('day-theme');
+        body.classList.remove('night-theme');
+        themeToggleBtn.textContent = 'Night';
     }
-};
+}
+
+
+function saveThemePreference(theme) {
+    localStorage.setItem(STORAGE_KEYS.THEME, theme);
+}
 
 // Function to toggle theme
 function toggleTheme() {
-    const isDayTheme = body.classList.contains('day-theme') || !body.classList.contains('night-theme');
+    const isDayTheme = body.classList.contains('day-theme');
     
     if (isDayTheme) {
         body.classList.remove('day-theme');
         body.classList.add('night-theme');
-        themeIcon.textContent = themeSettings.night.icon;
-        playSound();
+        themeToggleBtn.textContent = 'Day';
+        saveThemePreference('night');
     } else {
         body.classList.remove('night-theme');
         body.classList.add('day-theme');
-        themeIcon.textContent = themeSettings.day.icon;
-        playSound();
+        themeToggleBtn.textContent = 'Night';
+        saveThemePreference('day');
     }
 }
 
 // Add event listener for theme toggle
 themeToggleBtn.addEventListener('click', toggleTheme);
 
-// Manipulating Attributes - Read More Button
-const readMoreBtn = document.getElementById('read-more-btn');
-const fullContent = document.querySelector('.full-content');
+// ============================================
+// CART FUNCTIONALITY WITH LOCAL STORAGE
+// ============================================
+const cartBtn = document.getElementById('cart-btn');
+const cartPanel = document.getElementById('cart-panel');
+const cartOverlay = document.getElementById('cart-overlay');
+const closeCartBtn = document.getElementById('close-cart');
+const cartCount = document.querySelector('.cart-count');
+const cartContent = document.getElementById('cart-content');
+const cartTotalPrice = document.getElementById('cart-total-price');
 
-// Function to toggle read more/less
-function toggleReadMore() {
-    if (fullContent.style.display === 'none' || fullContent.style.display === '') {
-        fullContent.style.display = 'block';
-        readMoreBtn.textContent = 'Read Less';
-        readMoreBtn.style.backgroundColor = '#555';
-        playSound();
-    } else {
-        fullContent.style.display = 'none';
-        readMoreBtn.textContent = 'Read More';
-        readMoreBtn.style.backgroundColor = '#eb3636';
-        playSound();
+// Cart array
+let cart = [];
+
+// Load cart from localStorage
+function loadCart() {
+    const savedCart = localStorage.getItem(STORAGE_KEYS.CART);
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartUI();
     }
 }
 
-// Add event listener for read more button
-readMoreBtn.addEventListener('click', toggleReadMore);
+// Save cart to localStorage
+function saveCart() {
+    localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cart));
+}
 
+// Update cart UI
+function updateCartUI() {
+    // Update cart count
+    cartCount.textContent = cart.length;
+    
+    // Calculate total price
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    cartTotalPrice.textContent = `$${total.toFixed(2)}`;
+    
+    // Update cart content
+    if (cart.length === 0) {
+        cartContent.innerHTML = `
+            <div class="empty-cart">
+                <p>Your cart is empty</p>
+                <p class="empty-cart-subtitle">Add some items to get started!</p>
+            </div>
+        `;
+    } else {
+        cartContent.innerHTML = cart.map((item, index) => `
+            <div class="cart-item">
+                <div class="cart-item-details">
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                </div>
+                <button class="remove-item" onclick="removeFromCart(${index})">&times;</button>
+            </div>
+        `).join('');
+    }
+}
 
-// Event Listeners on Buttons - Close Discount Box
+// Remove item from cart
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    saveCart();
+    updateCartUI();
+}
+
+// Add item to cart (will be used in other pages)
+function addToCart(item) {
+    cart.push(item);
+    saveCart();
+    updateCartUI();
+}
+
+// Function to open cart
+function openCart() {
+    cartPanel.classList.add('active');
+    cartOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Function to close cart
+function closeCart() {
+    cartPanel.classList.remove('active');
+    cartOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Checkout function - requires login
+function handleCheckout() {
+    if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+    
+    // Check if user is logged in (you can implement this check)
+    const isLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+    
+    if (!isLoggedIn) {
+        alert('Please login to checkout');
+        window.location.href = 'account.html';
+    } else {
+        // Proceed with checkout
+        alert('Proceeding to checkout...');
+        // Add your checkout logic here
+    }
+}
+
+// Event listeners for cart
+cartBtn.addEventListener('click', openCart);
+closeCartBtn.addEventListener('click', closeCart);
+cartOverlay.addEventListener('click', closeCart);
+
+// ============================================
+// SEARCH BAR WITH SUGGESTIONS AND HISTORY
+// ============================================
+const searchInput = document.getElementById('search-input');
+const searchSuggestions = document.getElementById('search-suggestions');
+
+// Search history
+let searchHistory = [];
+
+// Load search history
+function loadSearchHistory() {
+    const saved = localStorage.getItem(STORAGE_KEYS.SEARCH_HISTORY);
+    if (saved) {
+        searchHistory = JSON.parse(saved);
+    }
+}
+
+// Save search to history
+function saveToSearchHistory(query) {
+    if (!searchHistory.includes(query)) {
+        searchHistory.unshift(query);
+        searchHistory = searchHistory.slice(0, 10); // Keep only last 10 searches
+        localStorage.setItem(STORAGE_KEYS.SEARCH_HISTORY, JSON.stringify(searchHistory));
+    }
+}
+
+// All searchable items with their categories and pages
+const searchableItems = [
+    { name: 'Home', page: 'index.html', category: 'page' },
+    { name: 'Account', page: 'account.html', category: 'page' },
+    { name: 'New', page: 'new.html', category: 'page' },
+    { name: 'Men', page: 'men.html', category: 'page' },
+    { name: 'Women', page: 'women.html', category: 'page' },
+    { name: 'Kids', page: 'kids.html', category: 'page' },
+    { name: 'About', page: 'about.html', category: 'page' },
+    { name: 'Help', page: 'help.html', category: 'page' },
+    { name: 'Hoodies', category: 'clothes', element: 'hoodies' },
+    { name: 'T-Shirt', category: 'clothes', element: 't-shirt' },
+    { name: 'Shoes', category: 'shoes', element: 'shoes' },
+    { name: 'Kimonos', category: 'clothes', element: 'kimonos' },
+    { name: 'Decors', category: 'new', element: 'decors' },
+    { name: 'Phone-Cases', category: 'new', element: 'phone-cases' },
+    { name: 'Mugs', category: 'new', element: 'mugs' },
+    { name: 'Figures', category: 'new', element: 'figures' },
+    { name: 'Masks', category: 'new', element: 'masks' },
+    { name: 'Clothes', category: 'filter', filter: 'clothes' },
+    { name: 'New Items', category: 'filter', filter: 'new' }
+];
+
+// Function to filter search results
+function getSearchResults(query) {
+    if (!query) return [];
+    
+    query = query.toLowerCase();
+    return searchableItems.filter(item => 
+        item.name.toLowerCase().includes(query)
+    ).slice(0, 8); // Limit to 8 results
+}
+
+// Function to display search suggestions
+function displaySuggestions(results) {
+    searchSuggestions.innerHTML = '';
+    
+    if (results.length === 0) {
+        searchSuggestions.classList.remove('active');
+        return;
+    }
+    
+    results.forEach(result => {
+        const suggestionItem = document.createElement('div');
+        suggestionItem.className = 'suggestion-item';
+        suggestionItem.innerHTML = `
+            ${result.name}
+            <span class="suggestion-category">${result.category}</span>
+        `;
+        
+        suggestionItem.addEventListener('click', () => {
+            handleSearchSelection(result);
+        });
+        
+        searchSuggestions.appendChild(suggestionItem);
+    });
+    
+    searchSuggestions.classList.add('active');
+}
+
+// Function to handle search selection
+function handleSearchSelection(result) {
+    searchInput.value = result.name;
+    searchSuggestions.classList.remove('active');
+    
+    // Save to search history
+    saveToSearchHistory(result.name);
+    
+    // Handle different types of results
+    if (result.page) {
+        // Navigate to page
+        window.location.href = result.page;
+    } else if (result.element) {
+        // Filter and scroll to element
+        const element = document.querySelector(`[data-name="${result.element}"]`);
+        if (element) {
+            // Apply filter first
+            const category = element.getAttribute('data-category');
+            filterProducts(category);
+            
+            // Update active filter button
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.querySelector(`[data-filter="${category}"]`);
+            if (activeBtn) activeBtn.classList.add('active');
+            
+            // Scroll to gallery section
+            setTimeout(() => {
+                const galleryContainer = document.querySelector('.gallery_container');
+                galleryContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Highlight the selected item
+                element.style.border = '3px solid #eb3636';
+                setTimeout(() => {
+                    element.style.border = '';
+                }, 2000);
+            }, 300);
+        }
+    } else if (result.filter) {
+        // Apply filter
+        filterProducts(result.filter);
+        
+        // Update active filter button
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.querySelector(`[data-filter="${result.filter}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
+        
+        // Scroll to gallery
+        setTimeout(() => {
+            const galleryContainer = document.querySelector('.gallery_container');
+            galleryContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+    }
+    
+    searchInput.value = '';
+}
+
+// Event listener for search input
+searchInput.addEventListener('input', (e) => {
+    const query = e.target.value;
+    const results = getSearchResults(query);
+    displaySuggestions(results);
+});
+
+// Handle Enter key in search
+searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        const query = searchInput.value;
+        const results = getSearchResults(query);
+        if (results.length > 0) {
+            handleSearchSelection(results[0]);
+        }
+    }
+});
+
+// Close suggestions when clicking outside
+document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+        searchSuggestions.classList.remove('active');
+    }
+});
+
+// ============================================
+// READ MORE BUTTON
+// ============================================
+// Function to toggle read more/less
+function toggleReadMore() {
+    const readMoreBtn = document.getElementById('read-more-btn');
+    const fullContent = document.querySelector('.full-content');
+    
+    if (readMoreBtn && fullContent) {
+        if (fullContent.style.display === 'none' || fullContent.style.display === '') {
+            fullContent.style.display = 'block';
+            readMoreBtn.textContent = 'Read Less';
+            readMoreBtn.style.backgroundColor = '#555';
+        } else {
+            fullContent.style.display = 'none';
+            readMoreBtn.textContent = 'Read More';
+            readMoreBtn.style.backgroundColor = '#eb3636';
+        }
+    }
+}
+
+// ============================================
+// DISCOUNT BOX
+// ============================================
 const discountBox = document.getElementById('discount-box');
 const closeDiscountBtn = document.getElementById('close-discount');
 
@@ -78,21 +358,14 @@ const closeDiscountBtn = document.getElementById('close-discount');
 function closeDiscountBox() {
     discountBox.style.display = 'none';
     discountBox.classList.add('hidden');
-    playSound();
-    
-    // Modify content dynamically
-
-    
-    // Remove message after 3 seconds
-    setTimeout(() => {
-        message.remove();
-    }, 3000);
 }
 
 // Add event listener for close button
 closeDiscountBtn.addEventListener('click', closeDiscountBox);
 
-// Keyboard Event Handling - Arrow Key Navigation
+// ============================================
+// KEYBOARD NAVIGATION
+// ============================================
 const menuItems = document.querySelectorAll('.menu-item');
 let currentMenuIndex = 0;
 
@@ -114,35 +387,34 @@ document.addEventListener('keydown', (event) => {
             event.preventDefault();
             currentMenuIndex = (currentMenuIndex + 1) % menuItems.length;
             focusMenuItem(currentMenuIndex);
-            playSound();
             break;
             
         case 'ArrowLeft':
             event.preventDefault();
             currentMenuIndex = (currentMenuIndex - 1 + menuItems.length) % menuItems.length;
             focusMenuItem(currentMenuIndex);
-            playSound();
             break;
             
         case 'ArrowDown':
             event.preventDefault();
             currentMenuIndex = Math.min(currentMenuIndex + 1, menuItems.length - 1);
             focusMenuItem(currentMenuIndex);
-            playSound();
             break;
             
         case 'ArrowUp':
             event.preventDefault();
             currentMenuIndex = Math.max(currentMenuIndex - 1, 0);
             focusMenuItem(currentMenuIndex);
-            playSound();
             break;
     }
 });
 
-// Switch Statements - Product Filtering System
+// ============================================
+// PRODUCT FILTERING
+// ============================================
 const filterButtons = document.querySelectorAll('.filter-btn');
 const galleryGrid = document.getElementById('gallery-grid');
+const galleryTitle = document.getElementById('gallery_id');
 
 // Function to filter products using switch statement
 function filterProducts(category) {
@@ -221,14 +493,12 @@ filterButtons.forEach(button => {
         
         // Filter products
         filterProducts(category);
-        
-        // Play sound
-        playSound();
     });
 });
 
-
-// Objects and Methods
+// ============================================
+// OBJECTS AND DATA
+// ============================================
 const productData = {
     totalProducts: 9,
     categories: ['clothes', 'shoes', 'new'],
@@ -273,6 +543,7 @@ const productNames = products.map(product => product.name);
 const clothesProducts = products.filter(product => product.category === 'clothes');
 
 // Using forEach to add hover effect
+const galleryItems = document.querySelectorAll('.gallery_img');
 galleryItems.forEach((item, index) => {
     item.addEventListener('mouseenter', () => {
         item.style.transform = 'scale(1.05) rotate(2deg)';
@@ -285,18 +556,9 @@ galleryItems.forEach((item, index) => {
     });
 });
 
-// Play Sounds
-function playSound() {
-    const clickSound = document.getElementById('click-sound');
-    if (clickSound) {
-        clickSound.currentTime = 0;
-        clickSound.play().catch(error => {
-            console.log('Audio play failed:', error);
-        });
-    }
-}
-
-// Animations
+// ============================================
+// ANIMATIONS
+// ============================================
 function animateGalleryItems() {
     const visibleItems = document.querySelectorAll('.gallery_img:not(.hidden)');
     
@@ -312,90 +574,29 @@ function animateGalleryItems() {
     });
 }
 
-
 // ============================================
-// 4. ADDITIONAL FEATURES
+// INITIALIZATION
 // ============================================
-
-// // Animate Counter Numbers
-// function animateCounter() {
-//     const counters = document.querySelectorAll('.count');
-    
-//     counters.forEach(counter => {
-//         const target = parseInt(counter.getAttribute('data-target'));
-//         const duration = 2000; // 2 seconds
-//         const increment = target / (duration / 16); // 60 FPS
-//         let current = 0;
-        
-//         const timer = setInterval(() => {
-//             current += increment;
-//             if (current >= target) {
-//                 counter.textContent = target;
-//                 clearInterval(timer);
-//             } else {
-//                 counter.textContent = Math.floor(current);
-//             }
-//         }, 16);
-//     });
-// }
-
-// // Trigger counter animation when in viewport
-// const statsSection = document.querySelector('.stats');
-// const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             animateCounter();
-//             observer.unobserve(entry.target);
-//         }
-//     });
-// }, { threshold: 0.5 });
-
-// if (statsSection) {
-//     observer.observe(statsSection);
-// }
-
-// Subscribe Form Handling
-// const subscribeForm = document.getElementById('subscribe-form');
-
-// subscribeForm.addEventListener('submit', (event) => {
-//     event.preventDefault();
-    
-//     const emailInput = subscribeForm.querySelector('input[type="email"]');
-//     const email = emailInput.value;
-    
-//     // Show success message
-//     const successMessage = document.createElement('div');
-//     successMessage.textContent = `Thank you for subscribing with ${email}!`;
-//     successMessage.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #4CAF50; color: white; padding: 20px 40px; border-radius: 10px; z-index: 10000; font-size: 18px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);';
-//     document.body.appendChild(successMessage);
-    
-//     // Play sound
-//     playSound();
-    
-//     // Clear input
-//     emailInput.value = '';
-    
-//     // Remove message after 3 seconds
-//     setTimeout(() => {
-//         successMessage.style.opacity = '0';
-//         successMessage.style.transition = 'opacity 0.5s ease';
-//         setTimeout(() => successMessage.remove(), 500);
-//     }, 3000);
-// });
-
-// ============================================
-// 5. INITIALIZATION
-// ============================================
-
-// Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Demon Slayer Shop Loaded!');
     console.log('Product Data:', productData);
     productData.displayInfo();
     displayProductInfo();
     
-    // Set initial theme
-    body.classList.add('day-theme');
+    // Load user preferences
+    loadThemePreference();
+    loadCart();
+    loadSearchHistory();
+    
+    // Update gallery title on page load
+    let itemCount = galleryItems.length;
+    galleryTitle.textContent = `Demon Slayer Best Selling Categories (${itemCount} Items)`;
+    
+    // Add checkout event listener
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', handleCheckout);
+    }
     
     // Initial animation for gallery items
     setTimeout(() => {
@@ -406,4 +607,3 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Product Names:', productNames);
     console.log('Clothes Products:', clothesProducts);
 });
-

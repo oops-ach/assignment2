@@ -58,7 +58,7 @@ function showAutocomplete(searchTerm, dropdown) {
         const matches = productData.filter(product =>
             product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
             product.description.toLowerCase().includes(searchTerm.toLowerCase())
-        ).slice(0, 8); 
+        ).slice(0, 8);
 
         if (matches.length > 0) {
             dropdown.empty();
@@ -104,17 +104,17 @@ $(document).on('keyup', function (e) {
 
 
 // Category filter buttons
-$('.category-btn').on('click', function() {
+$('.category-btn').on('click', function () {
     $('.category-btn').removeClass('active');
-    
+
     $(this).addClass('active');
-    
+
     // Get category
     const category = $(this).data('category');
     currentCategory = category;
-    
+
     $('#mainSearchInput').val('');
-    
+
     renderProducts(category);
 });
 
@@ -122,7 +122,7 @@ function renderProducts(category = 'all') {
     const productsGrid = document.getElementById('productsGrid');
     productsGrid.innerHTML = '';
 
-    const filteredProducts = productData.filter(product => 
+    const filteredProducts = productData.filter(product =>
         category === 'all' || product.category === category
     );
 
@@ -205,14 +205,14 @@ if (savedTheme === 'night') {
     nightBtn.classList.add('active');
 }
 
-dayBtn.addEventListener('click', function() {
+dayBtn.addEventListener('click', function () {
     document.body.classList.remove('night-mode');
     dayBtn.classList.add('active');
     nightBtn.classList.remove('active');
     localStorage.setItem('theme', 'day');
 });
 
-nightBtn.addEventListener('click', function() {
+nightBtn.addEventListener('click', function () {
     document.body.classList.add('night-mode');
     nightBtn.classList.add('active');
     dayBtn.classList.remove('active');
