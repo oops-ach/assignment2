@@ -5,11 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" type="image/x-icon" href="C:\Users\erabo\Desktop\assignment2\logo.png">
-    <link rel="stylesheet" href="styles/style_men_new.css">
+    <link rel="icon" type="image/x-icon" href="photos/logo.png">
+    <link rel="stylesheet" href="styles/style_new.css">
+
+    <!-- Подключаем Font Awesome через CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+
 </head>
 
 <body class="new_body">
+
     <header>
         <nav class="header_nav">
             <div class="header_logo">
@@ -28,59 +38,127 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="help.html">Help</a></li>
             </ul>
+            <div class="theme-toggle">
+                <button id="dayBtn" class="theme-btn active">
+                    <span class="icon"><i class="fa fa-sun"></i></span> <!-- Sun Icon -->
+                </button>
+                <button id="nightBtn" class="theme-btn">
+                    <span class="icon"><i class="fa fa-moon"></i></span> <!-- Moon Icon -->
+                </button>
+            </div>
         </nav>
     </header>
 
-    <main class="n-main">
-        <!-- First Page Section -->
-        <section class="n-hero" id="n-hero">
-            <div class="n-hero-text">
-                <h1>Browse & Select Anime-Inspired Shoes</h1>
-                <p>Find the freshest kicks inspired by your favorite anime. Rare styles, bold designs, and 50% off
-                    limited drops.</p>
-                <button class="n-scroll-btn" onclick ="document.getElementById('n-new-arrivals').scrollIntoView({ behavior: 'smooth' });">
-                    Explore New Arrivals
-                </button>
-            </div>
-            <div class="n-hero-gallery">
-                <img src="photos/Screenshot 2025-09-22 080532.png" alt="Anime Shoe 1" class="n-shoe-left">
-                <img src="photos/Screenshot 2025-09-22 081406.png" alt="Anime Shoe 2" class="n-shoe-center">
-                <img src="photos/demon_slayer.png" alt="Anime Shoe 3" class="n-shoe-right">
-            </div>
-        </section>
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1 class="dark_text"> New <br><span>Arrivals</span></h1>
+            <p>New colors, now also available in men's sizing</p>
+            <a href="#featured" class="btn">View Collection</a>
+        </div>
+    </section>
 
-        <!-- Second Page Section -->
-        <section class="n-new-arrivals" id="n-new-arrivals">
-            <h2>🔥 New Arrivals</h2>
-            <div class="n-shoe-grid">
-                <!-- shoe cards  -->
-                <div class="n-shoe-card">
-                    <img src="photos/Screenshot 2025-09-22 080532.png" alt="Shoe 1">
-                    <h3>Attack On Titan</h3>
-                    <p>$59.99</p>
-                    <button>Add to Cart</button>
+    <!-- featured -->
+    <section class="featured" id="featured">
+        <div class="center-text">
+            <h2 class="text">Featured Categories</h2>
+        </div>
+        <div class="featured-content">
+            <div class="row">
+                <a href="men.html"><img src="../photos/featured_men.png" alt="photo"></a>
+                <div class="fea-text">
+                    <h5 class="dark_text">Mens</h5>
+                    <p>10 items</p>
                 </div>
-                <div class="n-shoe-card">
-                    <img src="photos/Screenshot 2025-09-22 081406.png" alt="Shoe 2">
-                    <h3>Naruto</h3>
-                    <p>$64.99</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="n-shoe-card">
-                    <img src="photos/demon_slayer.png" alt="Shoe 3">
-                    <h3>One Piece</h3>
-                    <p>$69.99</p>
-                    <button>Add to Cart</button>
+                <div class="arrow">
+                    <a href="men.html"></a>
                 </div>
             </div>
-        </section>
-    </main>
 
+            <div class="row">
+                <a href="women.html"><img src="../photos/featured_women.png" alt="photo"></a>
+                <div class="fea-text">
+                    <h5 class="dark_text">Women</h5>
+                    <p>13 items</p>
+                </div>
+                <div class="arrow">
+                    <a href="../women.html"><i class='bxrds  bx-arrow-right-stroke'></i> </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <a href="kids.html"><img src="../photos/featured_kids.png" alt="photo"></a>
+                <div class="fea-text">
+                    <h5 class="dark_text">Kids</h5>
+                    <p>16 items</p>
+                </div>
+                <div class="arrow">
+                    <a href="../men.html"><i class='bxrds  bx-arrow-right-stroke'></i> </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- cta -->
+    <section class="cta">
+        <div class="cta-text">
+            <h6 class="dark_text">SUMMER ON SALE</h6>
+            <h4>20% OFF <br> NEW ARRIVALS</h4>
+            <a href="#new" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- new -->
+    <section class="new" id="new">
+        <div class="center-text">
+            <h2 class="text">New Arrivals</h2>
+        </div>
+        <div class="new-content">
+            <div class="box">
+                <img src="../photos/kardigan.png" alt="">
+                <h5 class="text">Kardigan for Men's</h5>
+                <h6 class="text">$188</h6>
+                <div class="sale">
+                    <h4>Sale</h4>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../photos/bruki.png" alt="">
+                <h5 class="text">Klassika Bruki for Men's</h5>
+                <h6 class="text">$156</h6>
+                <div class="sale">
+                    <h4>Sale</h4>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../photos/kurtka.png" alt="">
+                <h5 class="text">Kurtka for Men's</h5>
+                <h6 class="text">$235</h6>
+                <div class="sale">
+                    <h4>Sale</h4>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../photos/kross.png" alt="">
+                <h5 class="text">Kross for Men's</h5>
+                <h6 class="text">$235</h6>
+                <div class="sale">
+                    <h4>Sale</h4>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- contact -->
     <footer>
         <h3>&copy; All Rights Reserved</h3>
         <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
     </footer>
 
+    <script src="scripts/new.js"></script>
 </body>
 
 </html>

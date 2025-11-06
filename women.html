@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demon Slayer Store</title>
+  <link rel="icon" type="image/x-icon" href="photos/logo.png">
   <link rel="stylesheet" href="styles/style_women.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </head>
-
-
-<div id="notification" class="notification">
-  <span id="notification-text">Item added successfully</span>
-</div>
-
-
 <body>
 
-  <header>
-    <nav class="header_nav">
-      <div class="header_logo">
-        <img src="photos/logoNoBack.png">
-        <h4>Demon Slayer</h4>
-        <div class="header_logo"></div>
-      </div>
-
-      <ul class="header_menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="account.html">Account</a></li>
-        <li><a href="new.html">New</a></li>
-        <li><a href="men.html">Men</a></li>
-        <li><a href="women.html">Women</a></li>
-        <li><a href="kids.html">Kids</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="help.html">Help</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div id="cart-container">
-    <button id="cartButton" class="cart-button">
-      Cart (0) 
-    </button>
-  </div>
-
-  <!-- Notification System -->
-  <div id="notification" class="notification">
+  <div id="notification">
     <span id="notification-text">Item added to cart!</span>
   </div>
 
+  <header>
+        <nav class="header_nav">
+            <div class="header_logo">
+                <img src="photos/logoNoBack.png" alt="Logo" class="logo_img">
+                <h4>Demon Slayer</h4>
+                <div class="header_logo_overlay"></div>
+            </div>
 
+            <ul class="header_menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="new.html">New</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="dayBtn" class="theme-btn active">
+                    <span class="icon"><i class="fa fa-sun"></i></span> <!-- Sun Icon -->
+                </button>
+                <button id="nightBtn" class="theme-btn">
+                    <span class="icon"><i class="fa fa-moon"></i></span> <!-- Moon Icon -->
+                </button>
+            </div>
+        </nav>
+    </header>
 
+  <div id="cart-container">
+    <button id="cartButton" class="cart-button">
+      Cart (0) - $0.00
+    </button>
+  </div>
 
-  <!-- Main Content -->
   <main>
     <section class="new-arrivals">
       <h1>Women's Catalog</h1>
@@ -66,10 +61,10 @@
               <span class="product-price">$95.00</span>
             </div>
             <p>Custom Nezuko Demon Slayer Kimono</p>
-            <button class="add-to-cart-btn" data-product-name="Nezuko Kimono" data-product-price="95.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Nezuko Kimono" data-product-price="95.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/hoodieanime.jpg" alt="Anime Hoodie">
           <div class="product-info">
@@ -78,10 +73,10 @@
               <span class="product-price">$110.00</span>
             </div>
             <p>Casual Anime-Inspired Hoodie</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Hoodie" data-product-price="110.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime Hoodie" data-product-price="110.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/hinata_sneakers.jpg" alt="Hinata Sneakers">
           <div class="product-info">
@@ -90,10 +85,10 @@
               <span class="product-price">$125.00</span>
             </div>
             <p>Naruto Hinata Low Top Sneakers</p>
-            <button class="add-to-cart-btn" data-product-name="Hinata Sneakers" data-product-price="125.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Hinata Sneakers" data-product-price="125.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/backpack_anime.jpeg" alt="Anime Backpack">
           <div class="product-info">
@@ -102,10 +97,10 @@
               <span class="product-price">$89.00</span>
             </div>
             <p>Anime Style Backpack</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Backpack" data-product-price="89.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime Backpack" data-product-price="89.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/cap_anime.jpg" alt="Anime Cap">
           <div class="product-info">
@@ -114,10 +109,10 @@
               <span class="product-price">$89.00</span>
             </div>
             <p>Anime Style Cap</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Cap" data-product-price="89.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime Cap" data-product-price="89.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/scarf_anime.jpeg" alt="Anime Scarf">
           <div class="product-info">
@@ -126,10 +121,10 @@
               <span class="product-price">$89.00</span>
             </div>
             <p>Anime Style Scarf</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Scarf" data-product-price="89.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime Scarf" data-product-price="89.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/tshirt_anime.jpeg" alt="Anime T-Shirt">
           <div class="product-info">
@@ -138,10 +133,10 @@
               <span class="product-price">$89.00</span>
             </div>
             <p>Anime Style T-Shirt</p>
-            <button class="add-to-cart-btn" data-product-name="Anime T-Shirt" data-product-price="89.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime T-Shirt" data-product-price="89.00">Add to cart</button>
           </div>
         </div>
+
         <div class="product-card">
           <img src="photos/custom_anime.jpg" alt="Anime Custom">
           <div class="product-info">
@@ -150,59 +145,55 @@
               <span class="product-price">$89.00</span>
             </div>
             <p>Anime Style Custom</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Custom" data-product-price="89.00">Add to
-              cart</button>
+            <button class="add-to-cart-btn" data-product-name="Anime Custom" data-product-price="89.00">Add to cart</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!--Gallery-->
     <section>
       <h2>Gallery</h2>
       <div class="gallery">
         <div class="gallery-item">
-          <img class="lazy" data-src="photos/img1.jpg" alt="Gallery 1">
+          <img src="photos/img1.jpg" alt="Gallery 1">
           <span>Anime Style #1</span>
         </div>
         <div class="gallery-item">
-          <img class="lazy" data-src="photos/img2.jpg" alt="Gallery 2">
+          <img src="photos/img2.jpg" alt="Gallery 2">
           <span>Anime Style #2</span>
         </div>
         <div class="gallery-item">
-          <img class="lazy" data-src="photos/img3.jpg" alt="Gallery 3">
+          <img src="photos/img3.jpg" alt="Gallery 3">
           <span>Anime Style #3</span>
         </div>
         <div class="gallery-item">
-          <img class="lazy" data-src="photos/img4.png" alt="Gallery 4">
+          <img src="photos/image4.webp" alt="Gallery 4">
           <span>Anime Style #4</span>
         </div>
         <div class="gallery-item">
-          <img class="lazy" data-src="photos/img5.jpg" alt="Gallery 5">
+          <img src="photos/img5.jpg" alt="Gallery 5">
           <span>Anime Style #5</span>
         </div>
         <div class="gallery-item">
-          <img class="lazy" data-src="photos/img6.jpg" alt="Gallery 6">
+          <img src="photos/img6.jpg" alt="Gallery 6">
           <span>Anime Style #6</span>
         </div>
         <div class="gallery-item">
-          <img class="lazy" data-src="photos/img7.jpg" alt="Gallery 7">
+          <img src="photos/img7.jpg" alt="Gallery 7">
           <span>Anime Style #7</span>
         </div>
         <div class="gallery-item">
-          <img class="lazy" data-src="photos/img8.png" alt="Gallery 8">
+          <img src="photos/Obanai.jpg" alt="Gallery 8">
           <span>Anime Style #8</span>
         </div>
         <div class="gallery-item">
-          <img class="lazy" data-src="photos/img9.jpg" alt="Gallery 9">
+          <img src="photos/img9.jpg" alt="Gallery 9">
           <span>Anime Style #9</span>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
   <footer>
     <h3>&copy; All Rights Reserved</h3>
     <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
@@ -211,5 +202,4 @@
   <script src="script-women-about.js"></script>
 
 </body>
-
 </html>
