@@ -1,13 +1,13 @@
 const productData = [
-    { id: 1, name: 'Demon Slayer Shoes', price: '$120.00', category: 'shoes', image: '../photos/demon_slayer.png', description: 'Rivalry Low Demon Slayer' },
-    { id: 2, name: 'Ken Kaneki Hoodie', price: '$109.00', category: 'hoodies', image: '../photos/Ken_Kaneki_Hoodie.png', description: 'Zip-Up Active Top' },
-    { id: 3, name: 'Attack on Titan Shoes', price: '$184.00', category: 'shoes', image: '../photos/attack_on_titan.png', description: 'Levi Ackerman High Top' },
-    { id: 4, name: 'One Piece Sneakers', price: '$120.00', category: 'shoes', image: '../photos/one_piece.png', description: 'Zoro Low Top Sneakers' },
-    { id: 5, name: 'Naruto Sneakers', price: '$135.00', category: 'shoes', image: '../photos/naruto_shoes.png', description: 'Nara Shikamaru AF1 Shoes' },
-    { id: 6, name: 'Bleach Sneakers', price: '$113.00', category: 'shoes', image: '../photos/bleach.png', description: 'BLEACH x ASICS Sneaker Collaboration' },
-    { id: 7, name: 'Tokyo Ghoul Sneakers', price: '$140.00', category: 'shoes', image: '../photos/tokyo.png', description: 'Ken Kaneki High Top Shoes' },
-    { id: 8, name: 'Itachi Naruto Shoes', price: '$105.00', category: 'shoes', image: '../photos/naruto_itachi.png', description: 'Akatsuki Itachi Shoes' },
-    { id: 9, name: 'Hinata Sneakers', price: '$185.00', category: 'shoes', image: '../photos/hinata_sneakers.jpg', description: 'New new new enw new new new new new new' }
+    { id: 1, name: 'Demon Slayer Shoes', price: '$120.00', category: 'shoes', image: 'photos/demon_slayer.png', description: 'Rivalry Low Demon Slayer' },
+    { id: 2, name: 'Ken Kaneki Hoodie', price: '$109.00', category: 'hoodies', image: 'photos/Ken_Kaneki_Hoodie.png', description: 'Zip-Up Active Top' },
+    { id: 3, name: 'Attack on Titan Shoes', price: '$184.00', category: 'shoes', image: 'photos/attack_on_titan.png', description: 'Levi Ackerman High Top' },
+    { id: 4, name: 'One Piece Sneakers', price: '$120.00', category: 'shoes', image: 'photos/one_piece.png', description: 'Zoro Low Top Sneakers' },
+    { id: 5, name: 'Naruto Sneakers', price: '$135.00', category: 'shoes', image: 'photos/naruto_shoes.png', description: 'Nara Shikamaru AF1 Shoes' },
+    { id: 6, name: 'Bleach Sneakers', price: '$113.00', category: 'shoes', image: 'photos/bleach.png', description: 'BLEACH x ASICS Sneaker Collaboration' },
+    { id: 7, name: 'Tokyo Ghoul Sneakers', price: '$140.00', category: 'shoes', image: 'photos/tokyo.png', description: 'Ken Kaneki High Top Shoes' },
+    { id: 8, name: 'Itachi Naruto Shoes', price: '$105.00', category: 'shoes', image: 'photos/naruto_itachi.png', description: 'Akatsuki Itachi Shoes' },
+    { id: 9, name: 'Hinata Sneakers', price: '$185.00', category: 'shoes', image: 'photos/hinata_sneakers.jpg', description: 'New new new enw new new new new new new' }
 ];
 
 let currentCategory = 'all';
