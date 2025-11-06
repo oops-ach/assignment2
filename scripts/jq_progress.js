@@ -8,3 +8,11 @@ $(document).ready(function(){
         $('.scroll_progress').css('width', value + '%');
     });
 });
+<<<<<<< HEAD:jq_progress.js
+
+// jQuery(document).ready(function ($) {
+//     alert("I am an alert box!");
+// });
+
+=======
+>>>>>>> refs/remotes/origin/main:scripts/jq_progress.js

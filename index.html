@@ -9,49 +9,73 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
     crossorigin="anonymous"></script>
-
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
-
-        
 </head>
 <body>
   
   <div class="scroll_progress">
     <p></p>
   </div>
-    
-  <header>
+
+    <header>
         <nav class="header_nav">
             <div class="header_logo">
-                <img src="photos/logoNoBack.png" alt="Logo" class="logo_img">
+                <img src="photos/logoNoBack.png" alt="logo" class="logono">
                 <h4>Demon Slayer</h4>
-                <div class="header_logo_overlay"></div>
             </div>
 
-            <ul class="header_menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="account.html">Account</a></li>
-                <li><a href="new.html">New</a></li>
-                <li><a href="men.html">Men</a></li>
-                <li><a href="women.html">Women</a></li>
-                <li><a href="kids.html">Kids</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="help.html">Help</a></li>
+            <ul class="header_menu" id="main-menu">
+                <li><a href="index.html" class="menu-item">Home</a></li>
+                <li><a href="account.html" class="menu-item">Account</a></li>
+                <li><a href="new.html" class="menu-item">New</a></li>
+                <li><a href="men.html" class="menu-item">Men</a></li>
+                <li><a href="women.html" class="menu-item">Women</a></li>
+                <li><a href="kids.html" class="menu-item">Kids</a></li>
+                <li><a href="about.html" class="menu-item">About</a></li>
+                <li><a href="help.html" class="menu-item">Help</a></li>
             </ul>
-            <div class="theme-toggle">
-                <button id="dayBtn" class="theme-btn active">
-                    <span class="icon"><i class="fa fa-sun"></i></span> <!-- Sun Icon -->
-                </button>
-                <button id="nightBtn" class="theme-btn">
-                    <span class="icon"><i class="fa fa-moon"></i></span> <!-- Moon Icon -->
+
+            <div class="header_actions">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search products..." class="search-input">
+                    <div class="search-suggestions" id="search-suggestions"></div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-toggle-nav">Day</button>
+
+                <!-- Cart Button -->
+                <button id="cart-btn" class="cart-btn">
+                    <span class="cart-text">Cart</span>
+                    <span class="cart-count">0</span>
                 </button>
             </div>
         </nav>
     </header>
+
+    <!-- Cart Panel -->
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-content" id="cart-content">
+            <div class="empty-cart">
+                <p>Your cart is empty</p>
+                <p class="empty-cart-subtitle">Add some items to get started!</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
 
     <div class="container">
         <video autoplay loop muted plays-inline class="background-clip">
@@ -85,32 +109,58 @@
 
         <div class="content-new">
             <div class="text-new">
-                <h2>New Demon Slayer Merchandise cloth From film</h2>
+                <h2>New Demon Slayer Merchandise Cloth From Film</h2>
                 <div class="short-content">
                     <p>
                         Step into the world of <strong>Kimetsu no Yaiba (Demon Slayer)</strong> with our exclusive 
-                        <em>Demon Slayer Merchandise Cloth Collection</em> — a line of designs directly inspired 
+                        <em>Demon Slayer Merchandise Cloth Collection</em> – a line of designs directly inspired 
                         by the anime's breathtaking visuals and the unforgettable outfits of its legendary characters.
+                        Each piece tells a story of bravery, sacrifice, and the unbreakable bonds between demon slayers.
+                    </p>
+                    <p>
+                        Our collection features meticulously crafted designs that capture the essence of your favorite 
+                        characters. Whether you're a fan of the fierce determination of Tanjiro, the gentle strength of 
+                        Nezuko, or the thunderous power of Zenitsu, we have something special for every fan.
                     </p>
                 </div>
                 
                 <div class="full-content" style="display: none;">
                     <p>
-                        From <strong>Tanjiro's checkered haori</strong> symbolizing courage and compassion, 
-                        to <strong>Nezuko's delicate pink kimono pattern</strong> embodying elegance and resilience, every piece is designed with incredible accuracy.
+                        From <strong>Tanjiro's iconic checkered haori</strong> symbolizing courage and compassion, 
+                        to <strong>Nezuko's delicate pink kimono pattern</strong> embodying elegance and resilience, 
+                        every piece is designed with incredible accuracy and attention to detail that honors the original artwork.
                     </p>
 
                     <h3>✨ Crafted with Care</h3>
                     <p>
-                        Every cloth in this collection is made from <strong>high-quality, breathable fabric</strong> that balances comfort with durability.
+                        Every cloth in this collection is made from <strong>high-quality, breathable fabric</strong> that 
+                        balances comfort with durability. We use premium materials that are soft to the touch yet built to 
+                        withstand daily wear. The colors are vibrant and long-lasting, ensuring your merchandise looks fresh 
+                        even after multiple washes. Our attention to detail extends to every stitch, ensuring a perfect fit 
+                        and exceptional quality that matches the standards of true demon slayer warriors.
                     </p>
 
                     <h3>🌟 Why You'll Love It</h3>
                     <ul>
-                        <li><strong>Authentic Designs:</strong> Directly inspired by outfits seen in the anime and film.</li>
-                        <li><strong>Premium Fabric:</strong> Soft, durable, and made to last.</li>
-                        <li><strong>Unisex & Versatile:</strong> Perfect for fans of all ages and styles.</li>
+                        <li><strong>Authentic Designs:</strong> Directly inspired by outfits seen in the anime and film, 
+                        created in collaboration with official licensors to ensure accuracy.</li>
+                        <li><strong>Premium Fabric:</strong> Soft, durable, and made to last through countless adventures. 
+                        Our materials are carefully selected for maximum comfort and longevity.</li>
+                        <li><strong>Unisex & Versatile:</strong> Perfect for fans of all ages and styles. Wear them to 
+                        conventions, casual outings, or simply to show your love for the series.</li>
+                        <li><strong>Limited Edition:</strong> Many designs are produced in limited quantities, making them 
+                        collectible items for true fans.</li>
+                        <li><strong>Officially Licensed:</strong> Support the creators while wearing authentic merchandise 
+                        that meets official quality standards.</li>
                     </ul>
+
+                    <h3>🎨 Featured Collections</h3>
+                    <p>
+                        Explore our diverse range including the <strong>Hashira Collection</strong> featuring designs inspired 
+                        by the elite demon slayers, the <strong>Breathing Styles Series</strong> showcasing unique patterns 
+                        representing different breathing techniques, and the <strong>Demon Moon Collection</strong> with darker, 
+                        more mysterious designs for those who appreciate the series' antagonists.
+                    </p>
                 </div>
                 
                 <button id="read-more-btn" class="read-more-btn">Read More</button>
@@ -131,39 +181,39 @@
             </div>
 
             <div class="grid_container" id="gallery-grid">
-                <div class="gallery_img" data-category="clothes">
+                <div class="gallery_img" data-category="clothes" data-name="hoodies">
                     <a class="grid_image_link" href="women.html"><img src="photos/nezuko hoodie.webp" alt="HOODIES"></a>
                     <h4>Hoodies</h4>
                 </div>
-                <div class="gallery_img" data-category="clothes">
+                <div class="gallery_img" data-category="clothes" data-name="t-shirt">
                     <a class="grid_image_link" href="men.html"><img src="photos/t-shirt.jpg" alt="T-Shirt"></a>
                     <h4>T-Shirt</h4>
                 </div>
-                <div class="gallery_img" data-category="shoes">
+                <div class="gallery_img" data-category="shoes" data-name="shoes">
                     <a class="grid_image_link" href="men.html"><img src="photos/shoes.jpg" alt="Shoes"></a>
                     <h4>Shoes</h4>
                 </div>
-                <div class="gallery_img" data-category="clothes">
+                <div class="gallery_img" data-category="clothes" data-name="kimonos">
                     <a class="grid_image_link" href="men.html"><img src="photos/kimono.jpg" alt="Kimono"></a>
                     <h4>Kimonos</h4>
                 </div>
-                <div class="gallery_img" data-category="new">
+                <div class="gallery_img" data-category="new" data-name="decors">
                     <a class="grid_image_link" href="new.html"><img src="photos/decor.jpg" alt="Decor"></a>
                     <h4>Decors</h4>
                 </div>
-                <div class="gallery_img" data-category="new">
+                <div class="gallery_img" data-category="new" data-name="phone-cases">
                     <a class="grid_image_link" href="new.html"><img src="photos/phone-case.jpg" alt="Phone-Case"></a>
                     <h4>Phone-Cases</h4>
                 </div>
-                <div class="gallery_img" data-category="new">
+                <div class="gallery_img" data-category="new" data-name="mugs">
                     <a class="grid_image_link" href="new.html"><img src="photos/mugs.jpg" alt="Mug"></a>
                     <h4>Mugs</h4>
                 </div>
-                <div class="gallery_img" data-category="new">
+                <div class="gallery_img" data-category="new" data-name="figures">
                     <a class="grid_image_link" href="men.html"><img src="photos/zenitsu sneeaker.jpg" alt="Figures"></a>
                     <h4>Figures</h4>
                 </div>
-                <div class="gallery_img" data-category="new">
+                <div class="gallery_img" data-category="new" data-name="masks">
                     <a class="grid_image_link" href="new.html"><img src="photos/mask.jpg" alt="Mask"></a>
                     <h4>Masks</h4>
                 </div>
@@ -184,19 +234,13 @@
         <section class="num_count">
           <div class="num">
             <h3 class="count" data-stop="6969">6969</h3>
-            <p>Customers Around World</p>
+            <p class="why">Customers Around World</p>
           </div>
           <div class="num">
             <h3 class="count" data-stop="12000">12000</h3>
-            <p>Products Sold</p>
+            <p class="why">Products Sold</p>
           </div>
         </section>
-
-        <form>
-            <input type="text" id="input">
-            <button type="button" id="bttt">click me</button>
-        </form>
-        <ul id="list"></ul>
     </main>
 
     <footer>
@@ -204,15 +248,8 @@
         <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
     </footer>
 
-
-
-    <!-- Audio for sound effects -->
-    <audio id="click-sound" preload="auto">
-        <source src="soundsclick.mp3" type="audio/mpeg">
-    </audio>
-
-    <script src="scripts/index_script.js"></script>
-    <script src="scripts/jq_progress.js"></script>
-    <script src="scripts/jq_numcounter.js"></script>
+    <script src="/assignment2/scripts/index_script.js"></script>
+    <script src="/assignment2/scripts/jq_progress.js"></script>
+    <script src="/assignment2/scripts/jq_numcounter.js"></script>
 </body>
 </html>
