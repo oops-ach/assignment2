@@ -74,3 +74,21 @@ $('.copy-btn').on('click', function() {
     $textarea.remove();
   }
 });
+
+
+$(document).ready(function () {
+  $(".faq-answer").hide();
+
+  $(".faq-question").on("click", function () {
+    var answer = $(this).next(".faq-answer");
+    answer.slideToggle();
+
+    $(this).toggleClass("highlight");
+  });
+
+  $(window).on('load', function () {
+    setTimeout(function () {
+      $('#loader').fadeOut(500);
+    }, 2000);
+  });
+});
