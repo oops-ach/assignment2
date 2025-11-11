@@ -6,22 +6,24 @@
     <title>Demon Slayer Merchandise Shop</title>
     <link rel="icon" type="image/x-icon" href="photos/logo.png">
     <link rel="stylesheet" href="styles/style_index.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
     crossorigin="anonymous"></script>
 </head>
 <body>
   
-  <div class="scroll_progress">
-    <p></p>
-  </div>
-
     <header>
         <nav class="header_nav">
             <div class="header_logo">
                 <img src="photos/logoNoBack.png" alt="logo" class="logono">
                 <h4>Demon Slayer</h4>
             </div>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
             <ul class="header_menu" id="main-menu">
                 <li><a href="index.html" class="menu-item">Home</a></li>
@@ -33,6 +35,13 @@
                 <li><a href="about.html" class="menu-item">About</a></li>
                 <li><a href="help.html" class="menu-item">Help</a></li>
             </ul>
+
+            <!-- Hamburger Dropdown (Desktop 1024-1279px) -->
+            <div class="hamburger-dropdown" id="hamburger-dropdown">
+                <ul id="dropdown-menu">
+
+                </ul>
+            </div>
 
             <div class="header_actions">
                 <!-- Search Bar -->
@@ -77,6 +86,9 @@
     <!-- Cart Overlay -->
     <div class="cart-overlay" id="cart-overlay"></div>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
     <div class="container">
         <video autoplay loop muted plays-inline class="background-clip">
             <source src="photos/videoplayback.mp4" type="video/mp4">
@@ -87,26 +99,34 @@
     </div>
 
     <main>
+        <!-- ENHANCED CATEGORIES SECTION -->
         <div class="categories">
             <h1 id="main">Demon Slayer Catalog</h1>
             <div class="small-container">
                 <div class="row">
-                    <div class="col-3">
-                        <a rel="men" href="men.html"><img src="photos/image11.avif" alt="Image 1"></a>
-                        <h4>Men Catalog</h4>
+                    <div class="col-3" data-hover-text="EXPLORE MEN'S COLLECTION">
+                        <a rel="men" href="men.html">
+                            <img src="photos/image11.avif" alt="Men's Collection">
+                        </a>
+                        <h4><a href="men.html">Men Catalog</a></h4>
                     </div>
-                    <div class="col-3">
-                        <a rel="women" href="women.html"><img src="photos/image12.avif" alt="Image 2"></a>
-                        <h4>Women Catalog</h4>
+                    <div class="col-3" data-hover-text="DISCOVER WOMEN'S STYLES">
+                        <a rel="women" href="women.html">
+                            <img src="photos/image12.avif" alt="Women's Collection">
+                        </a>
+                        <h4><a href="women.html">Women Catalog</a></h4>
                     </div>
-                    <div class="col-3">
-                        <a rel="kids" href="kids.html"><img src="photos/image3.jpg" alt="Image 3"></a>
-                        <h4>Kids Catalog</h4>
+                    <div class="col-3" data-hover-text="SHOP KIDS COLLECTION">
+                        <a rel="kids" href="kids.html">
+                            <img src="photos/image3.jpg" alt="Kids Collection">
+                        </a>
+                        <h4><a href="kids.html">Kids Catalog</a></h4>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- CONTENT SECTION WITH READ MORE -->
         <div class="content-new">
             <div class="text-new">
                 <h2>New Demon Slayer Merchandise Cloth From Film</h2>
@@ -165,10 +185,10 @@
                 
                 <button id="read-more-btn" class="read-more-btn">Read More</button>
             </div>
-            <img src="photos/image4.webp" alt="New" class="img-new">
+            <img src="photos/image4.webp" alt="New Demon Slayer Merchandise" class="img-new">
         </div>
 
-        <!-- Gallery Container with Filter Buttons -->
+        <!-- GALLERY CONTAINER WITH FILTER BUTTONS -->
         <div class="gallery_container">
             <h1 id="gallery_id">Demon Slayer Best Selling Categories</h1>
             
@@ -182,39 +202,57 @@
 
             <div class="grid_container" id="gallery-grid">
                 <div class="gallery_img" data-category="clothes" data-name="hoodies">
-                    <a class="grid_image_link" href="women.html"><img src="photos/nezuko hoodie.webp" alt="HOODIES"></a>
+                    <a class="grid_image_link" href="women.html">
+                        <img src="photos/nezuko hoodie.webp" alt="Demon Slayer Hoodies">
+                    </a>
                     <h4>Hoodies</h4>
                 </div>
                 <div class="gallery_img" data-category="clothes" data-name="t-shirt">
-                    <a class="grid_image_link" href="men.html"><img src="photos/t-shirt.jpg" alt="T-Shirt"></a>
+                    <a class="grid_image_link" href="men.html">
+                        <img src="photos/t-shirt.jpg" alt="Demon Slayer T-Shirts">
+                    </a>
                     <h4>T-Shirt</h4>
                 </div>
                 <div class="gallery_img" data-category="shoes" data-name="shoes">
-                    <a class="grid_image_link" href="men.html"><img src="photos/shoes.jpg" alt="Shoes"></a>
+                    <a class="grid_image_link" href="men.html">
+                        <img src="photos/bleach.png" alt="Demon Slayer Shoes">
+                    </a>
                     <h4>Shoes</h4>
                 </div>
                 <div class="gallery_img" data-category="clothes" data-name="kimonos">
-                    <a class="grid_image_link" href="men.html"><img src="photos/kimono.jpg" alt="Kimono"></a>
+                    <a class="grid_image_link" href="women.html">
+                        <img src="photos/nezukokimono.jpg" alt="Demon Slayer Kimonos">
+                    </a>
                     <h4>Kimonos</h4>
                 </div>
                 <div class="gallery_img" data-category="new" data-name="decors">
-                    <a class="grid_image_link" href="new.html"><img src="photos/decor.jpg" alt="Decor"></a>
+                    <a class="grid_image_link" href="new.html">
+                        <img src="photos/decor.webp" alt="Demon Slayer Decors">
+                    </a>
                     <h4>Decors</h4>
                 </div>
                 <div class="gallery_img" data-category="new" data-name="phone-cases">
-                    <a class="grid_image_link" href="new.html"><img src="photos/phone-case.jpg" alt="Phone-Case"></a>
-                    <h4>Phone-Cases</h4>
+                    <a class="grid_image_link" href="new.html">
+                        <img src="photos/phone-case.jpg" alt="Demon Slayer Phone Cases">
+                    </a>
+                    <h4>Phone Cases</h4>
                 </div>
                 <div class="gallery_img" data-category="new" data-name="mugs">
-                    <a class="grid_image_link" href="new.html"><img src="photos/mugs.jpg" alt="Mug"></a>
+                    <a class="grid_image_link" href="new.html">
+                        <img src="photos/mugs.jpg" alt="Demon Slayer Mugs">
+                    </a>
                     <h4>Mugs</h4>
                 </div>
                 <div class="gallery_img" data-category="new" data-name="figures">
-                    <a class="grid_image_link" href="men.html"><img src="photos/zenitsu sneeaker.jpg" alt="Figures"></a>
+                    <a class="grid_image_link" href="men.html">
+                        <img src="photos/figure.jpg" alt="Demon Slayer Figures">
+                    </a>
                     <h4>Figures</h4>
                 </div>
                 <div class="gallery_img" data-category="new" data-name="masks">
-                    <a class="grid_image_link" href="new.html"><img src="photos/mask.jpg" alt="Mask"></a>
+                    <a class="grid_image_link" href="new.html">
+                        <img src="photos/mask.webp" alt="Demon Slayer Masks">
+                    </a>
                     <h4>Masks</h4>
                 </div>
             </div>
@@ -231,15 +269,16 @@
             <a class="shop-btn" href="account.html">Shop Now</a>
         </div>
 
+        <!-- Stats Counter -->
         <section class="num_count">
-          <div class="num">
-            <h3 class="count" data-stop="6969">6969</h3>
-            <p class="why">Customers Around World</p>
-          </div>
-          <div class="num">
-            <h3 class="count" data-stop="12000">12000</h3>
-            <p class="why">Products Sold</p>
-          </div>
+            <div class="num">
+                <h3 class="count" data-stop="6969">0</h3>
+                <p class="why">Customers Around World</p>
+            </div>
+            <div class="num">
+                <h3 class="count" data-stop="12000">0</h3>
+                <p class="why">Products Sold</p>
+            </div>
         </section>
     </main>
 
@@ -248,8 +287,9 @@
         <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="scripts/index_script.js"></script>
-    <script src="scripts/jq_progress.js"></script>
     <script src="scripts/jq_numcounter.js"></script>
 </body>
 </html>
+

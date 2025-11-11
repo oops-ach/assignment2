@@ -2,201 +2,154 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demon Slayer Kids</title>
-  <link rel="icon" type="image/x-icon" href="photos/logo.png">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="styles/style_kids.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Catalog - Demon Slayer Shop</title>
+    <link rel="icon" type="image/x-icon" href="photos/logo.png">
+    <link rel="stylesheet" href="styles/style_kids.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
 </head>
 
-<body class="kids_body">
+<body>
+    <header>
+        <nav class="header_nav">
+            <div class="header_logo">
+                <img src="photos/logoNoBack.png" alt="logo" class="logono">
+                <h4>Demon Slayer</h4>
+            </div>
 
-  <header class="kids-header">
-    <div class="kids-logo">
-      <img src="photos/logoNoBack.png" alt="Logo" class="logo_img">
-      <h4>Demon Slayer</h4>
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="header_menu" id="main-menu">
+                <li><a href="index.html" class="menu-item">Home</a></li>
+                <li><a href="account.html" class="menu-item">Account</a></li>
+                <li><a href="new.html" class="menu-item">New</a></li>
+                <li><a href="men.html" class="menu-item">Men</a></li>
+                <li><a href="women.html" class="menu-item">Women</a></li>
+                <li><a href="kids.html" class="menu-item">Kids</a></li>
+                <li><a href="about.html" class="menu-item">About</a></li>
+                <li><a href="help.html" class="menu-item">Help</a></li>
+            </ul>
+
+            <!-- Hamburger Dropdown (Desktop 1024-1279px) -->
+            <div class="hamburger-dropdown" id="hamburger-dropdown">
+                <ul id="dropdown-menu"></ul>
+            </div>
+
+            <div class="header_actions">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search kids products..." class="search-input">
+                    <div class="search-suggestions" id="search-suggestions"></div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-toggle-nav">Day</button>
+
+                <!-- Cart Button -->
+                <button id="cart-btn" class="cart-btn">
+                    <span class="cart-text">Cart</span>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Panel -->
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-content" id="cart-content">
+            <div class="empty-cart">
+                <p>Your cart is empty</p>
+                <p class="empty-cart-subtitle">Add some items to get started!</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
     </div>
-    <nav class="kids-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="account.html">Account</a></li>
-        <li><a href="new.html">New</a></li>
-        <li><a href="men.html">Men</a></li>
-        <li><a href="women.html">Women</a></li>
-        <li><a href="kids.html">Kids</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="help.html">Help</a></li>
-      </ul>
-    </nav>
-  </header>
 
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
 
-  <main class="kids-collection">
-    <section class="welcome-banner-kids">
-      <h2>KIDS COLLECTION</h2>
-      <p>Discover cute anime-inspired clothes, shoes and accessories</p>
-    </section>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <h1>Kids Arrivals</h1>
-    <div class="kids-grid">
-
-      <div class="kids-card">
-        <img class="lazy" src="photos/tanjiro backpack.jpg" alt="Kids Backpack">
-        <div class="kids-info">
-          <span class="kids-color">2 COLORS</span>
-          <div class="kids-row">
-            <h3 class="kids-brand">Tanjiro Backpack</h3>
-            <span class="kids-price">$90.00</span>
-          </div>
-          <p class="kids-desc">Lightweight school backpack</p>
-          <button class="addToCartBtn">Add to Cart</button>
+    <div class="container">
+        <h1>Kids Collection</h1>
+      
+        <!-- Search Container Main -->
+        <div class="search-container-main">
+            <div class="search-wrapper">
+                <input type="text" id="mainSearchInput" class="search-box" placeholder="Search kids products...">
+                <div id="mainAutocompleteDropdown" class="autocomplete-dropdown"></div>
+            </div>
         </div>
-      </div>
 
-      <div class="kids-card">
-        <img class="lazy" src="photos/nezuko hoodie.webp" alt="Kids Hoodie">
-        <div class="kids-info">
-          <span class="kids-color">3 COLORS</span>
-          <div class="kids-row">
-            <h3 class="kids-brand">Nezuko Hoodie</h3>
-            <span class="kids-price">$79.00</span>
-          </div>
-          <p class="kids-desc">Soft fleece pullover for kids</p>
-           <button class="addToCartBtn">Add to Cart</button>
+        <!-- Category Filter -->
+        <div class="category-filter">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="backpacks">Backpacks</button>
+            <button class="category-btn" data-category="hoodies">Hoodies</button>
+            <button class="category-btn" data-category="shoes">Shoes</button>
+            <button class="category-btn" data-category="tshirts">T-Shirts</button>
+            <button class="category-btn" data-category="accessories">Accessories</button>
         </div>
-      </div>
 
-      <div class="kids-card">
-        <img class="lazy" src="photos/zenitsu sneeaker.jpg" alt="Kids Sneakers">
-        <div class="kids-info">
-          <span class="kids-color">1 COLOR</span>
-          <div class="kids-row">
-            <h3 class="kids-brand">Zenitsu Sneakers</h3>
-            <span class="kids-price">$130.00</span>
-          </div>
-          <p class="kids-desc">Comfortable anime sneakers</p>
-           <button class="addToCartBtn">Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="kids-card">
-        <img class="lazy" src="photos/T-shirt.jpg" alt="Kids T-Shirt">
-        <div class="kids-info">
-          <span class="kids-color">4 COLORS</span>
-          <div class="kids-row">
-            <h3 class="kids-brand">Demon Slayer T-shirt</h3>
-            <span class="kids-price">$60.00</span>
-          </div>
-          <p class="kids-desc">Printed cotton T-shirt</p>
-           <button class="addToCartBtn">Add to Cart</button>
-        </div>
-      </div>
-      <div class="kids-card">
-        <img class="lazy" src="photos/haori.webp" alt="Kids Haori">
-        <div class="kids-info">
-          <span class="kids-color">3 COLORS</span>
-          <div class="kids-row">
-            <h3 class="kids-brand">Zenitsu Haori</h3>
-            <span class="kids-price">$100.00</span>
-          </div>
-          <p class="kids-desc">Lightweight school Haori</p>
-           <button class="addToCartBtn">Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="kids-card">
-        <img class="lazy" src="photos/Tumbler.jpg" alt="Kids Tumbler">
-        <div class="kids-info">
-          <span class="kids-color">3 COLORS</span>
-          <div class="kids-row">
-            <h3 class="kids-brand">Tanjiro Tumbler</h3>
-            <span class="kids-price">$49.00</span>
-          </div>
-          <p class="kids-desc">Kimetsu no Yaiba Mug-Tumbler</p>
-           <button class="addToCartBtn">Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="kids-card">
-        <img class="lazy" src="photos/Sword.jpg" alt="Kids Sword">
-        <div class="kids-info">
-          <span class="kids-color">1 COLOR</span>
-          <div class="kids-row">
-            <h3 class="kids-brand">Giyu Sword</h3>
-            <span class="kids-price">$200.00</span>
-          </div>
-          <p class="kids-desc">Tomioka Giyu sword</p>
-          <button class="addToCartBtn">Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="kids-card">
-        <img class="lazy" src="photos/Bags.jpg" alt="Bags">
-        <div class="kids-info">
-          <span class="kids-color">2 COLORS</span>
-          <div class="kids-row">
-            <h3 class="kids-brand">Demon Slayer Bags</h3>
-            <span class="kids-price">$70.00</span>
-          </div>
-          <p class="kids-desc">Art Print Designed Canvas Tote Bags</p>
-          <button class="addToCartBtn">Add to Cart</button> 
-        </div>
-      </div>
-
+        <!-- Products Grid -->
+        <div id="productsGrid" class="products-grid"></div>
     </div>
-  </main>
 
-<main class="kids-container">
-    <h2>Kids Collection Gallery</h2>
-
-    <div class="gallery">
-      <div class="gallery-item">
-        <img class="lazy" src="photos/Tanjiro.jpg" alt="Tanjiro">
-        <div class="caption">Tanjiro</div>
-      </div>
-      <div class="gallery-item">
-        <img class="lazy" src="photos/Tengen.jpg" alt="Tengen">
-        <div class="caption">Tengen</div>
-      </div>
-      <div class="gallery-item">
-        <img class="lazy" src="photos/Tomioka.jpg" alt="Tomioka">
-        <div class="caption">Giyu</div>
-      </div>
-      <div class="gallery-item">
-        <img class="lazy" src="photos/Sanemi.jpg" alt="Sanemi">
-        <div class="caption">Sanemi</div>
-      </div>
-      <div class="gallery-item">
-        <img class="lazy" src="photos/Shinobu.jpg" alt="Shinobu">
-        <div class="caption">Shinobu</div>
-      </div>
-      <div class="gallery-item">
-        <img class="lazy" src="photos/Obanai.jpg" alt="Obanai">
-        <div class="caption">Obanai</div>
-      </div>
-      <div class="gallery-item">
-        <img class="lazy" src="photos/Muichiro.jpg" alt="Muichiro">
-        <div class="caption">Muichiro</div>
-      </div>
-      <div class="gallery-item">
-        <img class="lazy" src="photos/Mitsuri.jpg" alt="Mitsuri">
-        <div class="caption">Mitsuri</div>
-      </div>
-      <div class="gallery-item">
-        <img class="lazy" src="photos/Rengoku.jpg" alt="Rengoku">
-        <div class="caption">Rengoku</div>
+    <!-- Kids Gallery Section -->
+    <div class="container">
+      <h2 class="gallery-title">Kids Collection Gallery</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="photos/Tanjiro.jpg" alt="Tanjiro">
+          <span class="gallery-caption">Tanjiro</span>
+        </div>
+        <div class="gallery-item">
+          <img src="photos/Tengen.jpg" alt="Tengen">
+          <span class="gallery-caption">Tengen</span>
+        </div>
+        <div class="gallery-item">
+          <img src="photos/Tomioka.jpg" alt="Tomioka">
+          <span class="gallery-caption">Giyu</span>
+        </div>
+        <div class="gallery-item">
+          <img src="photos/Sanemi.jpg" alt="Sanemi">
+          <span class="gallery-caption">Sanemi</span>
+        </div>
+        <div class="gallery-item">
+          <img src="photos/Shinobu.jpg" alt="Shinobu">
+          <span class="gallery-caption">Shinobu</span>
+        </div>
+        <div class="gallery-item">
+          <img src="photos/Obanai.jpg" alt="Obanai">
+          <span class="gallery-caption">Obanai</span>
+        </div>
       </div>
     </div>
-  </main>
 
-<div id="notification" class="notification">Item added to cart!</div>
+    <footer>
+        <h3>&copy; All Rights Reserved</h3>
+        <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
+    </footer>
 
-  <footer>
-    <h3>&copy; All Rights Reserved</h3>
-    <h4>Ersultan, Ramazan, Sultan and Yernar</h4>
-  </footer>
-  <script src="scripts/kids.js"></script>
+    <script src="scripts/kids.js"></script>
 </body>
 
 </html>

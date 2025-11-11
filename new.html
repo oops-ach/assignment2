@@ -4,50 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New Arrivals - Demon Slayer Merchandise Shop</title>
     <link rel="icon" type="image/x-icon" href="photos/logo.png">
     <link rel="stylesheet" href="styles/style_new.css">
-
-    <!-- Подключаем Font Awesome через CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
-
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
 </head>
 
 <body class="new_body">
 
+
     <header>
         <nav class="header_nav">
             <div class="header_logo">
-                <img src="photos/logoNoBack.png" alt="Logo" class="logo_img">
+                <img src="photos/logoNoBack.png" alt="logo" class="logono">
                 <h4>Demon Slayer</h4>
-                <div class="header_logo_overlay"></div>
             </div>
 
-            <ul class="header_menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="account.html">Account</a></li>
-                <li><a href="new.html">New</a></li>
-                <li><a href="men.html">Men</a></li>
-                <li><a href="women.html">Women</a></li>
-                <li><a href="kids.html">Kids</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="help.html">Help</a></li>
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="header_menu" id="main-menu">
+                <li><a href="index.html" class="menu-item">Home</a></li>
+                <li><a href="account.html" class="menu-item">Account</a></li>
+                <li><a href="new.html" class="menu-item">New</a></li>
+                <li><a href="men.html" class="menu-item">Men</a></li>
+                <li><a href="women.html" class="menu-item">Women</a></li>
+                <li><a href="kids.html" class="menu-item">Kids</a></li>
+                <li><a href="about.html" class="menu-item">About</a></li>
+                <li><a href="help.html" class="menu-item">Help</a></li>
             </ul>
-            <div class="theme-toggle">
-                <button id="dayBtn" class="theme-btn active">
-                    <span class="icon"><i class="fa fa-sun"></i></span> <!-- Sun Icon -->
-                </button>
-                <button id="nightBtn" class="theme-btn">
-                    <span class="icon"><i class="fa fa-moon"></i></span> <!-- Moon Icon -->
+
+            <!-- Hamburger Dropdown (Desktop 1024-1279px) -->
+            <div class="hamburger-dropdown" id="hamburger-dropdown">
+                <ul id="dropdown-menu">
+                    <li><a href="new.html">New</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="kids.html">Kids</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="help.html">Help</a></li>
+                </ul>
+            </div>
+
+            <div class="header_actions">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search products..." class="search-input">
+                    <div class="search-suggestions" id="search-suggestions"></div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-toggle-nav">Day</button>
+
+                <!-- Cart Button -->
+                <button id="cart-btn" class="cart-btn">
+                    <span class="cart-text">Cart</span>
+                    <span class="cart-count">0</span>
                 </button>
             </div>
         </nav>
     </header>
+
+    <!-- Cart Panel -->
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-content" id="cart-content">
+            <div class="empty-cart">
+                <p>Your cart is empty</p>
+                <p class="empty-cart-subtitle">Add some items to get started!</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
     <section class="home" id="home">
         <div class="home-text">
@@ -114,41 +162,39 @@
         </div>
         <div class="new-content">
             <div class="box">
-                <img src="photos/kardigan.png" alt="">
-                <h5 class="text">Kardigan for Men's</h5>
-                <h6 class="text">$188</h6>
-                <div class="sale">
-                    <h4>Sale</h4>
+                <div class="box-img">
+                    <img src="photos/decor.webp" alt="Demon Slayer themed decor" loading="lazy">
                 </div>
+                <h5 class="text">Decors</h5>
             </div>
 
             <div class="box">
-                <img src="photos/bruki.png" alt="">
-                <h5 class="text">Klassika Bruki for Men's</h5>
-                <h6 class="text">$156</h6>
-                <div class="sale">
-                    <h4>Sale</h4>
+                <div class="box-img">
+                    <img src="photos/phone-case.jpg" alt="Demon Slayer phone case" loading="lazy">
                 </div>
+                <h5 class="text">Phone Cases</h5>
             </div>
 
             <div class="box">
-                <img src="photos/kurtka.png" alt="">
-                <h5 class="text">Kurtka for Men's</h5>
-                <h6 class="text">$235</h6>
-                <div class="sale">
-                    <h4>Sale</h4>
+                <div class="box-img">
+                    <img src="photos/mugs.jpg" alt="Demon Slayer mug" loading="lazy">
                 </div>
+                <h5 class="text">Mugs</h5>
             </div>
 
             <div class="box">
-                <img src="photos/kross.png" alt="">
-                <h5 class="text">Kross for Men's</h5>
-                <h6 class="text">$235</h6>
-                <div class="sale">
-                    <h4>Sale</h4>
+                <div class="box-img">
+                    <img src="photos/figure.jpg" alt="Demon Slayer action figure" loading="lazy">
                 </div>
+                <h5 class="text">Figures</h5>
             </div>
 
+            <div class="box">
+                <div class="box-img">
+                    <img src="photos/mask.webp" alt="Demon Slayer mask" loading="lazy">
+                </div>
+                <h5 class="text">Masks</h5>
+            </div>
         </div>
     </section>
 
@@ -159,6 +205,7 @@
     </footer>
 
     <script src="scripts/new.js"></script>
+
 </body>
 
 </html>

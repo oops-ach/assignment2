@@ -290,7 +290,7 @@ function setupCart() {
 }
 
 // ============================================
-// SEARCH BAR WITH SUGGESTIONS AND HISTORY
+// SEARCH FUNCTIONALITY
 // ============================================
 function setupSearch() {
     const searchInput = document.getElementById('search-input');
@@ -321,18 +321,7 @@ function setupSearch() {
         { name: 'Women', page: 'women.html', category: 'page' },
         { name: 'Kids', page: 'kids.html', category: 'page' },
         { name: 'About', page: 'about.html', category: 'page' },
-        { name: 'Help', page: 'help.html', category: 'page' },
-        { name: 'Hoodies', category: 'clothes', element: 'hoodies' },
-        { name: 'T-Shirt', category: 'clothes', element: 't-shirt' },
-        { name: 'Shoes', category: 'shoes', element: 'shoes' },
-        { name: 'Kimonos', category: 'clothes', element: 'kimonos' },
-        { name: 'Decors', category: 'new', element: 'decors' },
-        { name: 'Phone-Cases', category: 'new', element: 'phone-cases' },
-        { name: 'Mugs', category: 'new', element: 'mugs' },
-        { name: 'Figures', category: 'new', element: 'figures' },
-        { name: 'Masks', category: 'new', element: 'masks' },
-        { name: 'Clothes', category: 'filter', filter: 'clothes' },
-        { name: 'New Items', category: 'filter', filter: 'new' }
+        { name: 'Help', page: 'help.html', category: 'page' }
     ];
 
     function getSearchResults(query) {
@@ -380,43 +369,6 @@ function setupSearch() {
         
         if (result.page) {
             window.location.href = result.page;
-        } else if (result.element) {
-            const element = document.querySelector(`[data-name="${result.element}"]`);
-            if (element) {
-                const category = element.getAttribute('data-category');
-                filterProducts(category);
-                
-                const filterButtons = document.querySelectorAll('.filter-btn');
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                const activeBtn = document.querySelector(`[data-filter="${category}"]`);
-                if (activeBtn) activeBtn.classList.add('active');
-                
-                setTimeout(() => {
-                    const galleryContainer = document.querySelector('.gallery_container');
-                    if (galleryContainer) {
-                        galleryContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                    
-                    element.style.border = '3px solid #eb3636';
-                    setTimeout(() => {
-                        element.style.border = '';
-                    }, 2000);
-                }, 300);
-            }
-        } else if (result.filter) {
-            filterProducts(result.filter);
-            
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.querySelector(`[data-filter="${result.filter}"]`);
-            if (activeBtn) activeBtn.classList.add('active');
-            
-            setTimeout(() => {
-                const galleryContainer = document.querySelector('.gallery_container');
-                if (galleryContainer) {
-                    galleryContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }, 300);
         }
         
         if (searchInput) searchInput.value = '';
@@ -449,68 +401,6 @@ function setupSearch() {
     });
 
     loadSearchHistory();
-}
-
-// ============================================
-// READ MORE BUTTON - FIXED
-// ============================================
-function initializeReadMore() {
-    const readMoreBtn = document.getElementById('read-more-btn');
-    const fullContent = document.querySelector('.full-content');
-    
-    if (readMoreBtn && fullContent) {
-        // Ensure initial state
-        fullContent.style.display = 'none';
-        
-        readMoreBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            if (fullContent.style.display === 'none') {
-                fullContent.style.display = 'block';
-                readMoreBtn.textContent = 'Read Less';
-                readMoreBtn.style.backgroundColor = '#555';
-                
-                setTimeout(() => {
-                    fullContent.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'nearest' 
-                    });
-                }, 100);
-            } else {
-                fullContent.style.display = 'none';
-                readMoreBtn.textContent = 'Read More';
-                readMoreBtn.style.backgroundColor = '#eb3636';
-                
-                setTimeout(() => {
-                    readMoreBtn.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'nearest' 
-                    });
-                }, 100);
-            }
-        });
-        
-        console.log('Read More button initialized successfully');
-    }
-}
-
-// ============================================
-// DISCOUNT BOX
-// ============================================
-function setupDiscountBox() {
-    const discountBox = document.getElementById('discount-box');
-    const closeDiscountBtn = document.getElementById('close-discount');
-
-    function closeDiscountBox() {
-        if (discountBox) {
-            discountBox.style.display = 'none';
-            discountBox.classList.add('hidden');
-        }
-    }
-
-    if (closeDiscountBtn) {
-        closeDiscountBtn.addEventListener('click', closeDiscountBox);
-    }
 }
 
 // ============================================
@@ -559,107 +449,6 @@ function setupKeyboardNavigation() {
         }
     });
 }
-
-// ============================================
-// PRODUCT FILTERING
-// ============================================
-function setupProductFiltering() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const galleryGrid = document.getElementById('gallery-grid');
-    const galleryTitle = document.getElementById('gallery_id');
-
-    function filterProducts(category) {
-        const items = document.querySelectorAll('.gallery_img');
-        let visibleCount = 0;
-        
-        items.forEach(item => {
-            const itemCategory = item.getAttribute('data-category');
-            
-            switch (category) {
-                case 'all':
-                    item.classList.remove('hidden');
-                    item.style.display = 'block';
-                    visibleCount++;
-                    break;
-                    
-                case 'clothes':
-                    if (itemCategory === 'clothes') {
-                        item.classList.remove('hidden');
-                        item.style.display = 'block';
-                        visibleCount++;
-                    } else {
-                        item.classList.add('hidden');
-                        item.style.display = 'none';
-                    }
-                    break;
-                    
-                case 'shoes':
-                    if (itemCategory === 'shoes') {
-                        item.classList.remove('hidden');
-                        item.style.display = 'block';
-                        visibleCount++;
-                    } else {
-                        item.classList.add('hidden');
-                        item.style.display = 'none';
-                    }
-                    break;
-                    
-                case 'new':
-                    if (itemCategory === 'new') {
-                        item.classList.remove('hidden');
-                        item.style.display = 'block';
-                        visibleCount++;
-                    } else {
-                        item.classList.add('hidden');
-                        item.style.display = 'none';
-                    }
-                    break;
-                    
-                default:
-                    item.classList.remove('hidden');
-                    item.style.display = 'block';
-                    visibleCount++;
-            }
-        });
-        
-        if (galleryTitle) {
-            const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
-            galleryTitle.textContent = `Demon Slayer Best Selling Categories - ${categoryName} (${visibleCount} Items)`;
-        }
-        
-        animateGalleryItems();
-    }
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            const category = button.getAttribute('data-filter');
-            filterProducts(category);
-        });
-    });
-}
-
-// ============================================
-// ANIMATIONS
-// ============================================
-function animateGalleryItems() {
-    const visibleItems = document.querySelectorAll('.gallery_img:not(.hidden)');
-    
-    visibleItems.forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-            item.style.transition = 'all 0.5s ease';
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-        }, index * 100);
-    });
-}
-
-
 
 // ============================================
 // INITIALIZATION

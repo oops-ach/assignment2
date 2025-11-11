@@ -9,17 +9,17 @@ const STORAGE_KEYS = {
 };
 
 // ============================================
-// KIDS PRODUCT DATA
+// WOMEN'S PRODUCT DATA
 // ============================================
 const productData = [
-    { id: 1, name: 'Tanjiro Backpack', price: 90.00, category: 'backpacks', image: 'photos/tanjiro backpack.jpg', description: 'Lightweight school backpack' },
-    { id: 2, name: 'Nezuko Hoodie', price: 79.00, category: 'hoodies', image: 'photos/nezuko hoodie.webp', description: 'Soft fleece pullover for kids' },
-    { id: 3, name: 'Zenitsu Sneakers', price: 130.00, category: 'shoes', image: 'photos/zenitsu sneeaker.jpg', description: 'Comfortable anime sneakers' },
-    { id: 4, name: 'Demon Slayer T-shirt', price: 60.00, category: 'tshirts', image: 'photos/T-shirt.jpg', description: 'Printed cotton T-shirt' },
-    { id: 5, name: 'Zenitsu Haori', price: 100.00, category: 'accessories', image: 'photos/haori.webp', description: 'Lightweight school Haori' },
-    { id: 6, name: 'Tanjiro Tumbler', price: 49.00, category: 'accessories', image: 'photos/Tumbler.jpg', description: 'Kimetsu no Yaiba Mug-Tumbler' },
-    { id: 7, name: 'Giyu Sword', price: 200.00, category: 'accessories', image: 'photos/Sword.jpg', description: 'Tomioka Giyu sword' },
-    { id: 8, name: 'Demon Slayer Bags', price: 70.00, category: 'backpacks', image: 'photos/Bags.jpg', description: 'Art Print Designed Canvas Tote Bags' }
+    { id: 1, name: 'Nezuko Kimono', price: 95.00, category: 'kimono', image: 'photos/nezukokimono.jpg', description: 'Custom Nezuko Demon Slayer Kimono' },
+    { id: 2, name: 'Anime Hoodie', price: 110.00, category: 'hoodies', image: 'photos/hoodieanime.jpg', description: 'Casual Anime-Inspired Hoodie' },
+    { id: 3, name: 'Hinata Sneakers', price: 125.00, category: 'shoes', image: 'photos/hinata_sneakers.jpg', description: 'Naruto Hinata Low Top Sneakers' },
+    { id: 4, name: 'Anime Backpack', price: 89.00, category: 'accessories', image: 'photos/backpack_anime.jpeg', description: 'Anime Style Backpack' },
+    { id: 5, name: 'Anime Cap', price: 89.00, category: 'accessories', image: 'photos/cap_anime.jpg', description: 'Anime Style Cap' },
+    { id: 6, name: 'Anime Scarf', price: 89.00, category: 'accessories', image: 'photos/scarf_anime.jpeg', description: 'Anime Style Scarf' },
+    { id: 7, name: 'Anime T-Shirt', price: 89.00, category: 'hoodies', image: 'photos/tshirt_anime.jpeg', description: 'Anime Style T-Shirt' },
+    { id: 8, name: 'Anime Custom', price: 89.00, category: 'kimono', image: 'photos/custom_anime.jpg', description: 'Anime Style Custom' }
 ];
 
 let currentCategory = 'all';
@@ -317,7 +317,7 @@ function setupCart() {
 }
 
 // ============================================
-// SEARCH BAR WITH KIDS-SPECIFIC SUGGESTIONS
+// SEARCH BAR WITH WOMEN-SPECIFIC SUGGESTIONS
 // ============================================
 function setupSearch() {
     const searchInput = document.getElementById('search-input');
@@ -340,31 +340,30 @@ function setupSearch() {
         }
     }
 
-    // KIDS-SPECIFIC SEARCHABLE ITEMS
+    // WOMEN-SPECIFIC SEARCHABLE ITEMS
     const searchableItems = [
         // Pages
         { name: 'Home', page: 'index.html', category: 'page' },
         { name: 'Account', page: 'account.html', category: 'page' },
         { name: 'New', page: 'new.html', category: 'page' },
-        { name: 'Kids', page: 'kids.html', category: 'page' },
+        { name: 'Women', page: 'women.html', category: 'page' },
         { name: 'About', page: 'about.html', category: 'page' },
         { name: 'Help', page: 'help.html', category: 'page' },
         
-        // Kids clothing categories
-        { name: 'Backpacks', category: 'backpacks', element: 'backpacks' },
+        // Women's clothing categories
+        { name: 'Kimono', category: 'kimono', element: 'kimono' },
         { name: 'Hoodies', category: 'hoodies', element: 'hoodies' },
         { name: 'Shoes', category: 'shoes', element: 'shoes' },
-        { name: 'T-Shirts', category: 'tshirts', element: 'tshirts' },
         { name: 'Accessories', category: 'accessories', element: 'accessories' },
-        { name: 'Haori', category: 'accessories', element: 'accessories' },
-        { name: 'Tumbler', category: 'accessories', element: 'accessories' },
-        { name: 'Sword', category: 'accessories', element: 'accessories' },
+        { name: 'Backpack', category: 'accessories', element: 'accessories' },
+        { name: 'Cap', category: 'accessories', element: 'accessories' },
+        { name: 'Scarf', category: 'accessories', element: 'accessories' },
+        { name: 'T-Shirt', category: 'hoodies', element: 'hoodies' },
         
-        // Kids specific filters
-        { name: 'Backpacks', category: 'filter', filter: 'backpacks' },
+        // Women's specific filters
+        { name: 'Kimono', category: 'filter', filter: 'kimono' },
         { name: 'Hoodies', category: 'filter', filter: 'hoodies' },
         { name: 'Shoes', category: 'filter', filter: 'shoes' },
-        { name: 'T-Shirts', category: 'filter', filter: 'tshirts' },
         { name: 'Accessories', category: 'filter', filter: 'accessories' }
     ];
 
@@ -424,10 +423,9 @@ function setupSearch() {
 
     function handleElementSelection(result) {
         const categoryMap = {
-            'backpacks': 'backpacks',
+            'kimono': 'kimono',
             'hoodies': 'hoodies',
             'shoes': 'shoes',
-            'tshirts': 'tshirts',
             'accessories': 'accessories'
         };
         
@@ -769,26 +767,6 @@ function loadRating(productId) {
 }
 
 // ============================================
-// GALLERY HOVER EFFECTS
-// ============================================
-function initializeGalleryEffects() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    // The CSS now handles the hover effects, but we can keep this function
-    // for any additional JavaScript functionality we might want to add later
-    console.log('Gallery effects initialized');
-    
-    // Example: Add click handlers if needed
-    galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const caption = this.querySelector('.gallery-caption').textContent;
-            console.log(`Clicked on ${caption}`);
-            // You can add modal or other interactive features here
-        });
-    });
-}
-
-// ============================================
 // CART FUNCTIONALITY FOR PRODUCTS
 // ============================================
 function addCartListeners() {
@@ -830,32 +808,10 @@ function showAddToCartFeedback(button) {
 }
 
 // ============================================
-// GALLERY HOVER EFFECTS
-// ============================================
-function initializeGalleryEffects() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    galleryItems.forEach(item => {
-        const img = item.querySelector('img');
-        const caption = item.querySelector('span');
-        
-        item.addEventListener('mouseenter', () => {
-            img.style.transform = 'scale(1.1)';
-            caption.style.opacity = '1';
-        });
-        
-        item.addEventListener('mouseleave', () => {
-            img.style.transform = 'scale(1)';
-            caption.style.opacity = '0';
-        });
-    });
-}
-
-// ============================================
 // INITIALIZATION
 // ============================================
-function initializeKidsPage() {
-    console.log('Initializing Kids Catalog...');
+function initializeWomenPage() {
+    console.log('Initializing Women\'s Catalog...');
     
     setupHamburgerMenu();
     setupThemeToggle();
@@ -865,14 +821,13 @@ function initializeKidsPage() {
     renderProducts();
     initializeSearch();
     initializeCategoryFilters();
-    initializeGalleryEffects();
 }
 
 // ============================================
 // EVENT LISTENERS
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    initializeKidsPage();
+    initializeWomenPage();
 });
 
 document.addEventListener('visibilitychange', function() {

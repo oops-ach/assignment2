@@ -1,113 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiment Site</title>
-    <link rel="icon" type="image/x-icon" href="photos/logo.png">
-    <link rel="stylesheet" href="styles/style_men_new.css">
-    <link rel="stylesheet" href="styles/search.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Men's Catalog - Demon Slayer Shop</title>
+        <link rel="icon" type="image/x-icon" href="photos/logo.png">
+        <link rel="stylesheet" href="styles/style_men.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+        crossorigin="anonymous"></script>
+    </head>
 
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <body>
+        <header>
+            <nav class="header_nav">
+                <div class="header_logo">
+                    <img src="photos/logoNoBack.png" alt="logo" class="logono">
+                    <h4>Demon Slayer</h4>
+                </div>
 
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
-
-</head>
-
-<body class="men_body">
-    <header>
-        <nav class="header_nav">
-            <div class="header_logo">
-                <img src="photos/logoNoBack.png" alt="Logo" class="logo_img">
-                <h4>Demon Slayer</h4>
-                <div class="header_logo_overlay"></div>
-            </div>
-
-            <ul class="header_menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="account.html">Account</a></li>
-                <li><a href="new.html">New</a></li>
-                <li><a href="men.html">Men</a></li>
-                <li><a href="women.html">Women</a></li>
-                <li><a href="kids.html">Kids</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="help.html">Help</a></li>
-            </ul>
-            <div class="theme-toggle">
-                <button id="dayBtn" class="theme-btn active">
-                    <span class="icon"><i class="fa fa-sun"></i></span>
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger-menu" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
-                <button id="nightBtn" class="theme-btn">
-                    <span class="icon"><i class="fa fa-moon"></i></span>
-                </button>
+
+                <ul class="header_menu" id="main-menu">
+                    <li><a href="index.html" class="menu-item">Home</a></li>
+                    <li><a href="account.html" class="menu-item">Account</a></li>
+                    <li><a href="new.html" class="menu-item">New</a></li>
+                    <li><a href="men.html" class="menu-item">Men</a></li>
+                    <li><a href="women.html" class="menu-item">Women</a></li>
+                    <li><a href="kids.html" class="menu-item">Kids</a></li>
+                    <li><a href="about.html" class="menu-item">About</a></li>
+                    <li><a href="help.html" class="menu-item">Help</a></li>
+                </ul>
+
+                <!-- Hamburger Dropdown (Desktop 1024-1279px) -->
+                <div class="hamburger-dropdown" id="hamburger-dropdown">
+                    <ul id="dropdown-menu"></ul>
+                </div>
+
+                <div class="header_actions">
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search products..." class="search-input">
+                        <div class="search-suggestions" id="search-suggestions"></div>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="theme-toggle-nav">Day</button>
+
+                    <!-- Cart Button -->
+                    <button id="cart-btn" class="cart-btn">
+                        <span class="cart-text">Cart</span>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Cart Panel -->
+        <div class="cart-panel" id="cart-panel">
+            <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-cart" id="close-cart">&times;</button>
             </div>
-        </nav>
-    </header>
-
-    <div class="container">
-        <h1>Men's Catalog</h1>
-        <div class="search-container">
-            <div class="search-wrapper">
-                <input type="text" id="mainSearchInput" class="search-box" placeholder="Search ">
-                <div id="mainAutocompleteDropdown" class="autocomplete-dropdown"></div>
+            <div class="cart-content" id="cart-content">
+                <div class="empty-cart">
+                    <p>Your cart is empty</p>
+                    <p class="empty-cart-subtitle">Add some items to get started!</p>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">$0.00</span>
+                </div>
+                <button class="checkout-btn">Checkout</button>
             </div>
         </div>
 
-        <!-- Category Filter -->
-        <div class="category-filter">
-            <button class="category-btn active" data-category="all">All</button>
-            <button class="category-btn" data-category="hoodies">Hoodies</button>
-            <button class="category-btn" data-category="shoes">Shoes</button>
-            <button class="category-btn" data-category="accessories">Accessories</button>
+        <!-- Cart Overlay -->
+        <div class="cart-overlay" id="cart-overlay"></div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+        <div class="container">
+            <h1>Men's Catalog</h1>
+            
+            <!-- Search Container Main (like index page) -->
+            <div class="search-container-main">
+                <div class="search-wrapper">
+                    <input type="text" id="mainSearchInput" class="search-box" placeholder="Search products...">
+                    <div id="mainAutocompleteDropdown" class="autocomplete-dropdown"></div>
+                </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="hoodies">Hoodies</button>
+                <button class="category-btn" data-category="shoes">Shoes</button>
+                <button class="category-btn" data-category="accessories">Accessories</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="productsGrid" class="products-grid"></div>
         </div>
 
-        <!-- Products Grid -->
-        <div id="productsGrid" class="products-grid"></div>
+        <footer>
+            <h3>&copy; All Rights Reserved</h3>
+            <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
+        </footer>
 
-        <div class="products-grid" id="productsGrid"></div>
-    </div>
+        <script src="scripts/men.js"></script>
+    </body>
 
-    <!-- image gallery -->
-    <section class="gallery">
-        <div class="gallery-item"><img src="photos/gallery9.png" alt="">
-            <div class="gallery-caption">Picture 1</div>
-        </div>
-        <div class="gallery-item"><img src="photos/image1.jpg" alt="">
-            <div class="gallery-caption">Picture 2</div>
-        </div>
-        <div class="gallery-item"><img src="photos/gallery2.png" alt="Anime character with long black hair, purple eyes, and a purple hair bow wearing a pink kimono. A green bamboo muzzle covers their mouth, creating a serious and tense atmosphere against a dark misty background">
-            <div class="gallery-caption">Picture 3</div>
-        </div>
-        <div class="gallery-item"><img src="photos/gallery3.png" alt="">
-            <div class="gallery-caption">Picture 4</div>
-        </div>
-        <div class="gallery-item"><img src="photos/gallery4.png" alt="">
-            <div class="gallery-caption">Picture 5</div>
-        </div>
-        <div class="gallery-item"><img src="photos/gallery5.png" alt="">
-            <div class="gallery-caption">Picture 6</div>
-        </div>
-        <div class="gallery-item"><img src="photos/gallery6.png" alt="">
-            <div class="gallery-caption">Picture 7</div>
-        </div>
-        <div class="gallery-item"><img src="photos/gallery7.png" alt="">
-            <div class="gallery-caption">Picture 8</div>
-        </div>
-        <div class="gallery-item"><img src="photos/gallery8.png" alt="">
-            <div class="gallery-caption">Picture 9</div>
-        </div>
-    </section>
-
-    <footer >
-        <h3>&copy; All Rights Reserved</h3>
-        <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
-    </footer>
-
-    <script src="scripts/men.js"></script>
-</body>
-
-</html>
+    </html>

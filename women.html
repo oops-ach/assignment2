@@ -1,205 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demon Slayer Store</title>
-  <link rel="icon" type="image/x-icon" href="photos/logo.png">
-  <link rel="stylesheet" href="styles/style_women.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Catalog - Demon Slayer Shop</title>
+    <link rel="icon" type="image/x-icon" href="photos/logo.png">
+    <link rel="stylesheet" href="styles/style_women.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
-
-  <div id="notification">
-    <span id="notification-text">Item added to cart!</span>
-  </div>
-
-  <header>
+    <header>
         <nav class="header_nav">
             <div class="header_logo">
-                <img src="photos/logoNoBack.png" alt="Logo" class="logo_img">
+                <img src="photos/logoNoBack.png" alt="logo" class="logono">
                 <h4>Demon Slayer</h4>
-                <div class="header_logo_overlay"></div>
             </div>
 
-            <ul class="header_menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="account.html">Account</a></li>
-                <li><a href="new.html">New</a></li>
-                <li><a href="men.html">Men</a></li>
-                <li><a href="women.html">Women</a></li>
-                <li><a href="kids.html">Kids</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="help.html">Help</a></li>
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="header_menu" id="main-menu">
+                <li><a href="index.html" class="menu-item">Home</a></li>
+                <li><a href="account.html" class="menu-item">Account</a></li>
+                <li><a href="new.html" class="menu-item">New</a></li>
+                <li><a href="men.html" class="menu-item">Men</a></li>
+                <li><a href="women.html" class="menu-item">Women</a></li>
+                <li><a href="kids.html" class="menu-item">Kids</a></li>
+                <li><a href="about.html" class="menu-item">About</a></li>
+                <li><a href="help.html" class="menu-item">Help</a></li>
             </ul>
-            <div class="theme-toggle">
-                <button id="dayBtn" class="theme-btn active">
-                    <span class="icon"><i class="fa fa-sun"></i></span> <!-- Sun Icon -->
-                </button>
-                <button id="nightBtn" class="theme-btn">
-                    <span class="icon"><i class="fa fa-moon"></i></span> <!-- Moon Icon -->
+
+            <!-- Hamburger Dropdown (Desktop 1024-1279px) -->
+            <div class="hamburger-dropdown" id="hamburger-dropdown">
+                <ul id="dropdown-menu"></ul>
+            </div>
+
+            <div class="header_actions">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search products..." class="search-input">
+                    <div class="search-suggestions" id="search-suggestions"></div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-toggle-nav">Day</button>
+
+                <!-- Cart Button -->
+                <button id="cart-btn" class="cart-btn">
+                    <span class="cart-text">Cart</span>
+                    <span class="cart-count">0</span>
                 </button>
             </div>
         </nav>
     </header>
 
-  <div id="cart-container">
-    <button id="cartButton" class="cart-button">
-      Cart (0) - $0.00
-    </button>
-  </div>
-
-  <main>
-    <section class="new-arrivals">
-      <h1>Women's Catalog</h1>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="photos/nezukokimono.jpg" alt="Nezuko Kimono">
-          <div class="product-info">
-            <div class="product-row">
-              <h3>Nezuko Kimono</h3>
-              <span class="product-price">$95.00</span>
+    <!-- Cart Panel -->
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-content" id="cart-content">
+            <div class="empty-cart">
+                <p>Your cart is empty</p>
+                <p class="empty-cart-subtitle">Add some items to get started!</p>
             </div>
-            <p>Custom Nezuko Demon Slayer Kimono</p>
-            <button class="add-to-cart-btn" data-product-name="Nezuko Kimono" data-product-price="95.00">Add to cart</button>
-          </div>
         </div>
-
-        <div class="product-card">
-          <img src="photos/hoodieanime.jpg" alt="Anime Hoodie">
-          <div class="product-info">
-            <div class="product-row">
-              <h3>Anime Hoodie</h3>
-              <span class="product-price">$110.00</span>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
             </div>
-            <p>Casual Anime-Inspired Hoodie</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Hoodie" data-product-price="110.00">Add to cart</button>
-          </div>
+            <button class="checkout-btn">Checkout</button>
         </div>
+    </div>
 
-        <div class="product-card">
-          <img src="photos/hinata_sneakers.jpg" alt="Hinata Sneakers">
-          <div class="product-info">
-            <div class="product-row">
-              <h3>Hinata Sneakers</h3>
-              <span class="product-price">$125.00</span>
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+    <div class="container">
+        <h1>Women's Catalog</h1>
+        
+        <!-- Search Container Main -->
+        <div class="search-container-main">
+            <div class="search-wrapper">
+                <input type="text" id="mainSearchInput" class="search-box" placeholder="Search women's products...">
+                <div id="mainAutocompleteDropdown" class="autocomplete-dropdown"></div>
             </div>
-            <p>Naruto Hinata Low Top Sneakers</p>
-            <button class="add-to-cart-btn" data-product-name="Hinata Sneakers" data-product-price="125.00">Add to cart</button>
-          </div>
         </div>
 
-        <div class="product-card">
-          <img src="photos/backpack_anime.jpeg" alt="Anime Backpack">
-          <div class="product-info">
-            <div class="product-row">
-              <h3>Anime Backpack</h3>
-              <span class="product-price">$89.00</span>
-            </div>
-            <p>Anime Style Backpack</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Backpack" data-product-price="89.00">Add to cart</button>
-          </div>
+        <!-- Category Filter -->
+        <div class="category-filter">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="kimono">Kimono</button>
+            <button class="category-btn" data-category="hoodies">Hoodies</button>
+            <button class="category-btn" data-category="shoes">Shoes</button>
+            <button class="category-btn" data-category="accessories">Accessories</button>
         </div>
 
-        <div class="product-card">
-          <img src="photos/cap_anime.jpg" alt="Anime Cap">
-          <div class="product-info">
-            <div class="product-row">
-              <h3>Anime Cap</h3>
-              <span class="product-price">$89.00</span>
-            </div>
-            <p>Anime Style Cap</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Cap" data-product-price="89.00">Add to cart</button>
-          </div>
-        </div>
+        <!-- Products Grid -->
+        <div id="productsGrid" class="products-grid"></div>
+    </div>
 
-        <div class="product-card">
-          <img src="photos/scarf_anime.jpeg" alt="Anime Scarf">
-          <div class="product-info">
-            <div class="product-row">
-              <h3>Anime Scarf</h3>
-              <span class="product-price">$89.00</span>
-            </div>
-            <p>Anime Style Scarf</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Scarf" data-product-price="89.00">Add to cart</button>
-          </div>
-        </div>
+    <footer>
+        <h3>&copy; All Rights Reserved</h3>
+        <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
+    </footer>
 
-        <div class="product-card">
-          <img src="photos/tshirt_anime.jpeg" alt="Anime T-Shirt">
-          <div class="product-info">
-            <div class="product-row">
-              <h3>Anime T-Shirt</h3>
-              <span class="product-price">$89.00</span>
-            </div>
-            <p>Anime Style T-Shirt</p>
-            <button class="add-to-cart-btn" data-product-name="Anime T-Shirt" data-product-price="89.00">Add to cart</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="photos/custom_anime.jpg" alt="Anime Custom">
-          <div class="product-info">
-            <div class="product-row">
-              <h3>Anime Custom</h3>
-              <span class="product-price">$89.00</span>
-            </div>
-            <p>Anime Style Custom</p>
-            <button class="add-to-cart-btn" data-product-name="Anime Custom" data-product-price="89.00">Add to cart</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="photos/img1.jpg" alt="Gallery 1">
-          <span>Anime Style #1</span>
-        </div>
-        <div class="gallery-item">
-          <img src="photos/img2.jpg" alt="Gallery 2">
-          <span>Anime Style #2</span>
-        </div>
-        <div class="gallery-item">
-          <img src="photos/img3.jpg" alt="Gallery 3">
-          <span>Anime Style #3</span>
-        </div>
-        <div class="gallery-item">
-          <img src="photos/image4.webp" alt="Gallery 4">
-          <span>Anime Style #4</span>
-        </div>
-        <div class="gallery-item">
-          <img src="photos/img5.jpg" alt="Gallery 5">
-          <span>Anime Style #5</span>
-        </div>
-        <div class="gallery-item">
-          <img src="photos/img6.jpg" alt="Gallery 6">
-          <span>Anime Style #6</span>
-        </div>
-        <div class="gallery-item">
-          <img src="photos/img7.jpg" alt="Gallery 7">
-          <span>Anime Style #7</span>
-        </div>
-        <div class="gallery-item">
-          <img src="photos/Obanai.jpg" alt="Gallery 8">
-          <span>Anime Style #8</span>
-        </div>
-        <div class="gallery-item">
-          <img src="photos/img9.jpg" alt="Gallery 9">
-          <span>Anime Style #9</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <h3>&copy; All Rights Reserved</h3>
-    <h4>Ersultan, Ramazan, Sultan and Ernar</h4>
-  </footer>
-
-  <script src="scripts/script-women-about.js"></script>
-
+    <script src="scripts/script-women.js"></script>
 </body>
+
 </html>
